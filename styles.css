@@ -1,0 +1,258 @@
+:root {
+  --bg: #f4f2ea;
+  --surface: #fffdf8;
+  --ink: #1f2a2e;
+  --ink-soft: #5a686e;
+  --brand: #0f766e;
+  --brand-2: #0b4f6c;
+  --ok: #0b8f4d;
+  --ko: #b42318;
+  --ring: #f2b705;
+  --shadow: 0 14px 40px rgba(10, 36, 50, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at 15% 20%, #fff7d6 0%, transparent 35%),
+    radial-gradient(circle at 80% 10%, #ccebe9 0%, transparent 34%),
+    var(--bg);
+  min-height: 100vh;
+}
+
+.bg-shape {
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0.35;
+}
+
+.bg-shape-1 {
+  width: 260px;
+  height: 260px;
+  background: #58a399;
+  left: -60px;
+  top: 40px;
+}
+
+.bg-shape-2 {
+  width: 280px;
+  height: 280px;
+  background: #f0ad4e;
+  right: -80px;
+  bottom: 60px;
+}
+
+.app-shell {
+  width: min(980px, 94vw);
+  margin: 28px auto;
+  display: grid;
+  gap: 18px;
+}
+
+.app-header h1 {
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.app-header p {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid #e5ded0;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.hidden {
+  display: none;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: 1fr minmax(120px, 180px) 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input[type="number"] {
+  border: 1px solid #c7bfae;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fff;
+}
+
+button {
+  background: linear-gradient(120deg, var(--brand), var(--brand-2));
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 79, 108, 0.28);
+}
+
+button:focus-visible,
+.choice-btn:focus-visible,
+.choice-check label:focus-within {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.kpi {
+  margin: 0;
+  font-weight: 700;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: start;
+}
+
+.score-mini {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0 8px;
+  align-items: center;
+  background: #f6f1e4;
+  border: 1px solid #e2d8bf;
+  border-radius: 12px;
+  padding: 8px 12px;
+}
+
+.score-mini span:nth-child(1) {
+  color: var(--ok);
+}
+
+.score-mini span:nth-child(3) {
+  color: var(--ko);
+}
+
+.question {
+  margin: 16px 0;
+  line-height: 1.45;
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+}
+
+.choice-btn,
+.choice-check label {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #d7cebc;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px;
+}
+
+.choice-btn {
+  color: inherit;
+  cursor: pointer;
+}
+
+.choice-btn:hover,
+.choice-check label:hover {
+  border-color: #bbad90;
+}
+
+.choice-check {
+  display: block;
+}
+
+.choice-check input {
+  margin-right: 10px;
+}
+
+.feedback {
+  margin-top: 14px;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid;
+}
+
+.feedback.ok {
+  border-color: #7ad6a3;
+  background: #e9f8ef;
+}
+
+.feedback.ko {
+  border-color: #f5a4a4;
+  background: #fff1f1;
+}
+
+#nextBtn {
+  margin-top: 12px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: 20px;
+}
+
+.big-number {
+  margin: 8px 0 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: var(--brand-2);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid #e2d8bf;
+  padding: 8px 6px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 840px) {
+  .setup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .top-row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador Identity Management</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
+
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Simulador de Examenes Salesforce Identity</h1>
+        <p>Preguntas aleatorias, correccion inmediata y estadisticas por apartado.</p>
+      </header>
+
+      <section id="setupCard" class="card">
+        <h2>Configurar simulacion</h2>
+        <div class="setup-grid">
+          <label for="questionCount">Numero de preguntas</label>
+          <input id="questionCount" type="number" min="5" max="141" value="30" />
+          <button id="startBtn" type="button">Comenzar simulador</button>
+        </div>
+        <p id="datasetMeta" class="muted">Cargando banco de preguntas...</p>
+      </section>
+
+      <section id="quizCard" class="card hidden" aria-live="polite">
+        <div class="top-row">
+          <div>
+            <p id="progressText" class="kpi">Pregunta 0/0</p>
+            <p id="conceptText" class="muted">Apartado: -</p>
+          </div>
+          <div class="score-mini">
+            <span id="okCount">0</span>
+            <small>Aciertos</small>
+            <span id="koCount">0</span>
+            <small>Fallos</small>
+          </div>
+        </div>
+
+        <h2 id="questionText" class="question">-</h2>
+
+        <div id="choicesContainer" class="choices"></div>
+
+        <div id="multiActions" class="hidden">
+          <button id="submitMultiBtn" type="button">Comprobar seleccion</button>
+        </div>
+
+        <div id="feedbackBox" class="feedback hidden"></div>
+        <button id="nextBtn" class="hidden" type="button">Siguiente pregunta aleatoria</button>
+      </section>
+
+      <section id="resultsCard" class="card hidden">
+        <h2>Resultado final</h2>
+        <div class="result-grid">
+          <article>
+            <p id="finalSummary" class="kpi">-</p>
+            <p id="finalPercent" class="big-number">0%</p>
+          </article>
+          <article>
+            <h3>Desglose por apartado</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Apartado</th>
+                    <th>Aciertos</th>
+                    <th>Fallos</th>
+                    <th>%</th>
+                  </tr>
+                </thead>
+                <tbody id="conceptStatsBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+
+        <button id="restartBtn" type="button">Reiniciar simulador</button>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
