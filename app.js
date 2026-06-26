@@ -51,8 +51,43 @@ function sameSet(a, b) {
 }
 
 function normalizeExplanation(text) {
-  // Basic markdown cleanup for a readable inline explanation.
-  return text.replace(/\*\*/g, "").trim();
+  if (!text) return "";
+  // Split into paragraphs by double newline
+  const paragraphs = text.trim().split(/\n\n/);
+  let html = "";
+  for (const para of paragraphs) {
+    const trimmed = para.trim();
+    // Check if paragraph starts with the "why incorrect" header
+    if (/^\u00bfPor qu\u00e9 las otras opciones/.test(trimmed)) {
+      // May contain bullets after the header line
+      const lines = trimmed.split("\n");
+      const header = lines[0];
+      html += `<p class="explanation-divider"><strong>${header}</strong></p>`;
+      const bulletLines = lines.slice(1).filter(l => l.trim().startsWith("- "));
+      if (bulletLines.length) {
+        html += "<ul>" + bulletLines.map(li => `<li>${li.trim().replace(/^- /, "")}</li>`).join("") + "</ul>";
+      }
+    } else if (/\n- /.test(trimmed) || /^- /.test(trimmed)) {
+      // Paragraph with bullet points (may have a leading sentence)
+      const lines = trimmed.split("\n");
+      let leadText = "";
+      const bullets = [];
+      for (const line of lines) {
+        if (line.trim().startsWith("- ")) {
+          bullets.push(line.trim().replace(/^- /, ""));
+        } else if (bullets.length === 0) {
+          leadText += (leadText ? " " : "") + line.trim();
+        }
+      }
+      if (leadText) html += `<p>${leadText}</p>`;
+      if (bullets.length) {
+        html += "<ul>" + bullets.map(li => `<li>${li}</li>`).join("") + "</ul>";
+      }
+    } else {
+      html += `<p>${trimmed}</p>`;
+    }
+  }
+  return html;
 }
 
 function updateTopScore() {
