@@ -14,6 +14,7 @@
       <header class="app-header">
         <h1>Simulador de Examenes Salesforce Identity</h1>
         <p>Preguntas aleatorias, correccion inmediata y estadisticas por apartado.</p>
+        <div id="google_translate_element"></div>
       </header>
 
       <section id="setupCard" class="card">
@@ -40,9 +41,9 @@
           </div>
         </div>
 
-        <h2 id="questionText" class="question">-</h2>
+        <h2 id="questionText" class="question notranslate">-</h2>
 
-        <div id="choicesContainer" class="choices"></div>
+        <div id="choicesContainer" class="choices notranslate"></div>
 
         <div id="multiActions" class="hidden">
           <button id="submitMultiBtn" type="button">Comprobar seleccion</button>
@@ -82,5 +83,16 @@
     </main>
 
     <script src="app.js" defer></script>
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'es',
+          includedLanguages: 'es,en,de,km',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>

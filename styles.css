@@ -66,6 +66,10 @@ body {
   color: var(--ink-soft);
 }
 
+#google_translate_element {
+  margin-top: 10px;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid #e5ded0;
