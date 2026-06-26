@@ -105,23 +105,23 @@ function markAndContinue(isCorrect, selectedAnswers) {
 
   updateTopScore();
 
+  const explanation = normalizeExplanation(question.explanation || "");
+  const refLink = question.reference
+    ? `<br/><a href="${question.reference}" target="_blank" rel="noopener">📖 Documentación oficial de Salesforce</a>`
+    : "";
+
   if (isCorrect) {
-    showFeedback("ok", "<strong>Correcto.</strong> Pasando a la siguiente pregunta...");
-    el.nextBtn.classList.add("hidden");
-    window.setTimeout(() => {
-      hideFeedback();
-      getNextQuestion();
-    }, 700);
+    showFeedback("ok", `<strong>¡Correcto!</strong><br/><br/>${explanation}${refLink}`);
+    el.nextBtn.classList.remove("hidden");
     return;
   }
 
-  const explanation = normalizeExplanation(question.explanation);
   const selected = selectedAnswers.length ? selectedAnswers.join(", ") : "(sin respuesta)";
   const expected = question.correctAnswers.join(", ");
 
   showFeedback(
     "ko",
-    `<strong>Incorrecto.</strong><br/>Tu respuesta: ${selected}<br/>Correcta: ${expected}<br/><br/>${explanation}`
+    `<strong>Incorrecto.</strong><br/>Tu respuesta: ${selected}<br/>Correcta: ${expected}<br/><br/>${explanation}${refLink}`
   );
   el.nextBtn.classList.remove("hidden");
 }
@@ -183,7 +183,10 @@ function renderMultiChoice(question) {
 function renderQuestion() {
   const question = state.current;
 
-  el.questionText.textContent = question.question;
+  const chooseHint = question.correctAnswers.length > 1
+    ? ` (Elige ${question.correctAnswers.length})`
+    : "";
+  el.questionText.textContent = question.question + chooseHint;
   el.conceptText.textContent = `Apartado: ${question.concept}`;
 
   el.choicesContainer.innerHTML = "";
@@ -243,18 +246,27 @@ function startQuiz() {
 
 async function init() {
   try {
-    const response = await fetch("./questions.json");
+    const response = await fetch("./_clean_questions_explained.json");
     if (!response.ok) {
-      throw new Error(`No se pudo cargar questions.json (${response.status})`);
+      throw new Error(`No se pudo cargar _clean_questions_explained.json (${response.status})`);
     }
     const data = await response.json();
 
-    state.allQuestions = (data.questions || []).filter(
-      (q) => Array.isArray(q.correctAnswers) && q.correctAnswers.length > 0
-    );
+    // Transform from new format to quiz format
+    state.allQuestions = (data.questions || [])
+      .filter((q) => Array.isArray(q.correct) && q.correct.length > 0)
+      .map((q) => ({
+        question: q.question,
+        correctAnswers: q.correct,
+        choices: Object.entries(q.options).map(([id, text]) => ({ id, text })),
+        concept: q.category || "General",
+        explanation: q.explanation || "",
+        reference: q.reference || "",
+        choose: q.choose || 1
+      }));
 
     el.questionCount.max = String(state.allQuestions.length);
-    el.datasetMeta.textContent = `Banco cargado: ${state.allQuestions.length} preguntas disponibles.`;
+    el.datasetMeta.textContent = `Banco cargado: ${state.allQuestions.length} preguntas con explicaciones detalladas.`;
     el.startBtn.disabled = false;
   } catch (error) {
     el.datasetMeta.textContent = `Error cargando datos: ${error.message}`;
