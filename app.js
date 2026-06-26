@@ -142,6 +142,8 @@ function renderSingleChoice(question) {
 }
 
 function renderMultiChoice(question) {
+  const maxSelectable = question.correctAnswers.length;
+
   question.choices.forEach((choice) => {
     const wrapper = document.createElement("div");
     wrapper.className = "choice-check";
@@ -150,6 +152,15 @@ function renderMultiChoice(question) {
     const cb = document.createElement("input");
     cb.type = "checkbox";
     cb.value = choice.id;
+    cb.addEventListener("change", () => {
+      const allCbs = el.choicesContainer.querySelectorAll("input[type='checkbox']");
+      const checkedCount = el.choicesContainer.querySelectorAll("input[type='checkbox']:checked").length;
+      allCbs.forEach((box) => {
+        if (!box.checked) {
+          box.disabled = checkedCount >= maxSelectable;
+        }
+      });
+    });
     label.appendChild(cb);
 
     const text = document.createElement("span");
