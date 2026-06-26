@@ -1,6 +1,0 @@
-PDF re-review stats
-Unique questions source: 132
-Validated answers: 0
-Pending manual validation: 132
-Question bank rows parsed from PDFs: 13
-Consolidated qnum answers available: 2

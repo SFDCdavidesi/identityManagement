@@ -1,0 +1,22 @@
+# Only track web app files: index.html, app.js, styles.css, clean-questions-explained.json, README.md, .nojekyll
+
+# Python
+*.py
+__pycache__/
+.venv/
+
+# PDFs and source materials
+*.pdf
+
+# Working/intermediate files
+*.txt
+*.csv
+_*.json
+questions.json
+_parsed_unique.json
+
+# Study guide markdown files
+QA_*.md
+
+# Logs
+*.log

@@ -1,5 +1,0 @@
-Resumen de deduplicacion fuzzy agresiva
-Bloques extraidos de los 4 ficheros: 181
-Preguntas unicas finales (fuzzy): 132
-Preguntas fusionadas como duplicadas: 49
-Umbral fuzzy usado: 0.84
