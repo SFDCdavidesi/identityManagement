@@ -1,0 +1,409 @@
+Banco Unificado y Limpio - Salesforce IAM Architect
+Fuente: union de 4 ficheros OCR
+Formato: Pregunta, opciones y respuesta detectada por marcador @
+
+Pregunta 1
+Application Application , Application Application
+A. B An organization has a central cloud-based Identity and Access Management (IAM) Service for authentication and user management, which must be utilized by all applications as follows: 1 - Change of a user status in the central IAM Service triggers provisioning or deprovisioning in the integrated cloud applications. 2 - Security Assertion Markup Language single sign-on (SSO) is used to facilitate access for users authenticated at identity provider (Central IAM Service). Which approach should an IAM architect implement on Salesforce Sales Cloud to meet the requirements?
+D. Deploy Identity Connect component and set up automated provisioning and deprovisioning of users, as well as SAML-based SSO. --- PÁGINA 2 --- lesforce Certified Identity and Access Management Architect
+Respuesta detectada: A
+
+Pregunta 2
+Universal Containers (UC) is considering a Customer 360 Initiative to gain a single source of the truth for its customer data across disparate systems and services. UC wants to understand the primary benefits of Customer 360 Identity and how it contributes to a successful Customer 360 Truth project. What are two are key benefits of Customer 360 Identity as it relates to Customer 3607
+A. Customer 360 Identity not only provides a unified sign up and sign in experience, but also tracks anonymous user activity prior to signing up so organizations can understand user activity before and after the users identify themselves. and user experiences.
+C. Customer 360 Identity enables an organization to build a single login for each of its customers, giving the organization an understanding of the user's login activity across all its digital properties and applications.
+D. C Customer 360 Identity automatically integrates with Customer 360 Data Manager and Customer 360 Audiences to seamlessly populate all user data.
+Respuesta detectada: C
+
+Pregunta 3
+An identity architect's client has a homegrown identity provider (IdP). Salesforce is used as the service provider (SP). The head of IT is worried that during a SP initiated single sign-on (SSO), the Security Assertion Markup Language (SAML) request content will be altered. What should the identity architect recommend to make sure that there is additional trust between the SP and the IdP?
+A. Ensure that there is an Hi 1r> connection between IDP and SP. 8. © Ensure that on the SSO settings page, the "Request Signing Certificate" field has a self-signed certificate. ¢.© Ensure that the Issuer and Assertion Consumer Service (ACS) URL is properly configured between SP and IDP.
+D. Encrypt the SAML Request using certification authority (CA) signed certificate and decrypt on IdP. © Merk this item for later review. --- PÁGINA 2 --- ime Remaining
+Respuesta detectada: D
+
+Pregunta 4
+An insurance company has a connected app in its Salesforce environment that is used to integrate with a Google Workspace (formerly known as G Suite). An identity and access management (IAM) architect has been asked to implement automation to enable users, freeze/suspend users, disable users, and reactivate existing users in Google Workspace upon similar actions in | Which solution is recommended to meet this requirement?
+A. Build a custom REST endpoint in Salesforce that Google Workspace can poll against. 8. © Build an Apex trigger on the UserLogin object to make asynchronous callouts to Google APIS. a) Configure User Provisioning for Connected Apps.
+D. Update the Security Assertion Markup Language Just-in-Time (SAML JIT) handler in Salesforce for user provisioning and de-provisioning, y ORAKE INTERNATIONAL 'ified Identity and Access Management Architect
+Respuesta detectada: No detectada
+
+Pregunta 5
+Universal Containers (UC) currently uses Salesforce Sales Cloud and an external billing application. Both Salesforce and the billing application are accessed several times a day to manage customers, UC would like to configure single sign-on and leverage Salesforce as the identity provider. Additionally, UC would like the billing application to be accessible from Salesforce. A redirect is acceptable. Which two Salesforce tools should an identity architect recommend to satisfy the requirements?
+A. Salesforce Canvas
+B. Identity Connect c. oO Connected Apps °@ App Launcher --- PÁGINA 23 ---
+Respuesta detectada: No detectada
+
+Pregunta 6
+Universal Containers is designing an identity architecture that involves integrating Salesforce with an external directory service. The external directory service will act as the central repository for user OAuthentication and OAuthorization across multiple systems within the organization. Which approach should be evaluated to establish trust between Salesforce and the external directory service?
+A. Create multiple login screens using Experience Builder and use Login Flows at runtime to route to different login screens. 8. © For each brand create different communities and redirect users to the appropriate community using a custom Login controller written in Apex. €.© Authorize third-party service by sending authorization requests to the community-url/services/oauth2/authorize/cookie_value. © Authorize third-party service by sending authorization requests to the community_url/services/ oauth2/authorize/?expid=value, §® of 64. An identity architect's client has a homegrown identity provider (IdP). Salesforce is used as the service provider (SP). The head of IT is worried that during a SP initiated single sign-on (SSO), the Security Assertion Markup Language (SAML) request content will be altered. What should the identity architect recommend to make sure that there is additional trust between the SP and the IdP?
+B. Use the Login History object to track information about devices from which users log in. SO) Use the Activations feature to meet the compliance requirement to track device information.
+C. Oo Setup Salesforce as an Authentication Provider to the existing IdP. °»© Setup Salesforce as a Service Provider to the existing IdP. @ of 64. A financial services company uses Salesforce and has a compliance requirement to track information about devices from which users log in. Also, a Salesforce Security Administrator needs to have the ability to revoke the device from which users log in. What should be used to fulfill this requirement?
+D. Third-party AppExchange solution ® of 64. Northern Trail Outfitters (NTO) is launching a new sportswear brand on its existing consumer portal built on Salesforce Experience Cloud. As part of the launch, emails with promotional links will be sent to existing customers to log in and claim a discount. The marketing manager would like the portal dynamically branded so that users will be directed to the brand link they clicked on; otherwise, users will view a recognizable NTO-branded page. The campaign is launching quickly, so there is no time to procure any additional licenses. However, the development team is available to apply any required changes to the portal. Which approach should the identity architect recommend?
+Respuesta detectada: D
+
+Pregunta 7
+Northern Trail Outfitters (NTO) is planning to build a new customer service portal and wants to use passwordless login, allowing customers to login with a one-time passcode sent to them via email or SMS. How should the quantity of required Identity Verification Credits be estimated?
+A. Identity Verification Credits are consumed with each verification sent and should be estimated based on the number of logins that will incur a verification challenge.
+B. Each community comes with 10,000 Identity Verification Credits per month and only customers with more than 10,000 logins a month should estimate additional SMS verifications needed. Identity Verification Credits are consumed with each SMS (text message) sent and should be estimated based on the number of login verification challenges for SMS verification users.
+D. C Identity Verification Credits are a direct add-on license based on the number of existing member-based or login-based Community licenses. Press the "Prt Scrn" on vour kevboard to tale --- PÁGINA 5 --- by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 8
+[Texto incompleto por OCR]
+A. Create a new permission set with JIT provisioning enabled, configure the necessary permissions, and assign the permission set to relevant users. 8. © Modify the organization-wide sharing settings to allow JIT provisioning, update the sharing rules for the user object. €.© Create a new Apex class to handle JIT provisioning, implement the required methods, and assign the class to the appropriate user profiles.
+B. Use certificate-based authentication, €.© Configure OpeniD Connect authentication provider. --- PÁGINA 5 --- of 64. A web service is developed that allows secure access to customer order status on the Salesforce Platform. The service connects to Salesforce through a connected app with the web server flow. The following are the required actions for the authorization flow: 1. User Authenticates and Authorizes Access 2. Request an Access Token 3. Salesforce Grants an Access Token 4, Request an Authorization Code 5. Salesforce Grants Authorization Code What is the correct sequence for the authorization flow? AO 213,45 2©@*> 2,3,2 CO 415,23
+C. Enable Single Logout with a secure logout URL.
+D. O 14,523 oo of 64. An identity professional is working on the configuration of a connected app for Universal Container's (UC) partner portal. UC wants to allow external users to access certain Salesforce data and perform limited actions. However, they also want to enforce additional security measures, such as IP restrictions and session timeout settings. Which configuration option should be used to enforce IP restrictions and session timeout settings for the connected app? @ of 64. An identity professional is working on the configuration of a connected app for Universal Container's (UC) partner portal. UC wants to allow external users to access certain Salesforce data and perform limited actions. However, they also want to enforce additional security measures, such as IP restrictions and session timeout settings. Which configuration option should be used to enforce IP restrictions and session timeout settings for the connected app?
+Respuesta detectada: B, D
+
+Pregunta 9
+An identity architect has been asked to recommend a solution that allows administrators to configure personalized alert messages to users before they land on the Experience Cloud site (formerly known as Community) homepage. What is recommended to fulfill this requirement with the least amount of customization? © Use Login Flows to add a screen that shows personalized alerts.
+B. oO Customize the registration handler Apex class to create a routing logic navigating to different home pages based on the user profile. ec, | Bulld a Lightning Web Component (LWC) for a homepage that shows custom alerts.
+D. oO Create custom metadata that stores user alerts and use a LWC to display alerts. --- PÁGINA 25 --- Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 10
+An Identity and Access Management (IAM) architect is tasked with unifying multiple B2C Commerce sites and an Experience Cloud community What should the IAM Architect do to fulfill this requirement? 8. © Configure community as a Security Assertion Markup Language (SAML) identity provider and enable Just-in-Time Provisioning to B2C Commerce.
+D. Configure both the community and the commerce sites as OAuth2 RPs (relying party) with an external identity provider. Ss ES ST) y ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 11
+Universal Containers (UC) Is rolling out its new Customer Identity and Access Management Solution built on top of its existing Salesforce instance. UC wants to allow customers to login using Facebook, Google, and other social sign-on providers.
+A. Q Configure a single sign-on setting and a 3 handler for each soil sign-on prowaer '8.Q Configure an authentication provider and a Just-In-Time (317) handler foreach social sign-on provider. €.@ Conrigure an authentication provider and a registration handler for each social sign-on provider 1.O Configure a singe sign-on setting and a registration handler for each socal sign-on provider, © Mark this tem for later review. 12 of 64, Experience Authorization Request Cloud Site --- PÁGINA 5 --- a) Northern Trail Outfitters (NTO) is using Experience Cloud as an Identity Provider for its application on Heroku. The application on Heroku should be able to handle two brands, Northern Trail Shoes and Northern Trail Shirts.
+Respuesta detectada: No detectada
+
+Pregunta 12
+[Texto incompleto por OCR]
+A. division of a Northern Trail Outfitters (NTO) purchased Salesforce. NTO uses a third party identity provider (IdP) to validate user credentials against its corporate Lightweight Directory Access Protocol (LDAP) directory. NTO wants to help employees remember as few passwords as possible. What should an identity architect recommend?
+B. a ) Use Salesforce connect to synchronize LDAP passwords to Salesforce. e. oO Setup Salesforce as an IdP to authenticate against the LDAP directory. 0.©E Setup Salesforce as an Authentication Provider to the existing IdP. Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 13
+--- PÁGINA 8 ---
+A. multinational company is looking to rollout Salesforce globally. The company has a Microsoft Active Directory Federation Services (ADFS) implementation for the Americas, Europe and APAC. The company plans to have a single org and they would like to have all of its users access Salesforce using the ADFS . The company would like to limit its investments and prefer not to procure additional applications to satisfy the requirements. What is recommended to ensure these requirements are met ?
+B. Configure Each ADFS system under single sign-on settings and allow users to choose the system to authenticate during sign on to Salesforce.
+C. Add a central identity system that federates between the ADFS systems and integrate with Salesforce for single sign-on.
+D. Use connected apps for each ADFS implementation and implement Salesforce site to authenticate users across the ADFS system applicable to their geo. SS ES ED by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 14
+Universal Container's (UC) is using Salesforce Experience Cloud site for its container wholesale business. The Identity architect wants to use an OAuthentication provider for the new site. Which two options should be utilized in creating an OAuthentication provider?
+A. custom registration handler can be set,
+B. Oo The default authentication provider certificate can be set. c A custom error URL can be set. 5°. The default login user can be set. Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 15
+Users logging into Salesforce are frequently prompted to verify their identity. The identity architect is required to provide recommendations so that frequency of prompt verification can be reduced. What should the identity architect recommend to meet the requirement?
+A. Implement multi-factor authentication for the Salesforce org.
+B. oO Implement 2FA authentication for the Salesforce org. c: oO Implement an single sign-on for Salesforce using an external identity provider. "© Set trusted IP ranges for the organization. --- PÁGINA 28 --- Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 16
+[Texto incompleto por OCR]
+A. technology enterprise is planning to implement single sign-on login for users. When users log in to Salesforce, data should be populated in User object custom fields. Which two steps should an identity architect recommend?
+C. Implement auth.SambitHandler Interface.
+D. Create and update methods. Fox J next> rover lf suet xo] --- PÁGINA 10 --- by ORAKE INTERNATIONAL
+Respuesta detectada: C, D
+
+Pregunta 17
+Northern Trail Outfitters (NTO) uses a Security Assertion Markup Language (SAML)-based Identity Provider (IdP) to OAuthenticate employees to all systems. The IdP OAuthenticates users against a Lightweight Directory Access Protocol (LDAP) directory and has access to user information. NTO wants to minimize Salesforce license usage since only a small percentage of users need Salesforce. What is recommended to ensure new employees have immediate access to Salesforce using their current IdP?
+A. c Bulld an integration that queries LDAP periodically and creates new active users in Salesforce. ®© Configure Just-in-Time provisioning using SAML attributes to create new Salesforce users as necessary when a new user attempts to login to Salesforce. Cc: Oo Define a process where administrators manually create new users in Salesforce.
+D. i) Build an integration that queries LDAP and creates new inactive users in Salesforce and use a login flow to activate the user at first login. --- PÁGINA 29 --- Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 18
+Northern Trail Outfitters (NTO) wants its customers to use phone numbers to log in to their new digital portal, which was designed and built using Salesforce Experience Cloud. In order to access the portal, the user will need to do the following: 1. Enter a phone number and/or email address 2. Enter a verification code that is to be sent via email or text. What is the recommended approach to fulfill this requirement?
+A. Create an Authentication provider and implement a self-registration handler class. 8. © Create a custom login page with an Apex controller, The controller has logic to send and verify the identity. Create a Login Discovery page and provide a Login Discovery Handler Apex class.
+D. Create a custom login flow that uses an Apex controller to verify the phone numbers with the company's verification service. CES ES TD --- PÁGINA 11 --- by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 19
+[Texto incompleto por OCR]
+A. division of a Northern Trail Outfitters (NTO) purchased Salesforce. NTO uses a third party identity provider (IdP) to validate user credentials against its corporate Lightweight Directory Access Protocol (LDAP) directory. NTO wants to help employees remember as few passwords as possible. What should an identity architect recommend?
+B. C) Setup Salesforce as an Authentication Provider to the existing IdP,
+C. O Setup Salesforce as an IdP to authenticate against the LDAP directory. © setup Salesforce as a Service Provider to the existing 1dP. Ss ES ST) by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 20
+Northern Trail Outfitters manages application functional permissions centrally as Active Directory groups. The CRM_SuperUser and CRM_Reporting_SuperUser groups should respectively give the user the SuperUser and Reporting_SuperUser permission set in Salesforce. Salesforce is the service provider to a Security Assertion Markup Language (SAML) identity provider. How should an identity architect ensure the Active Directory groups are reflected correctly when a user accesses Salesforce?
+A. Use 2 login flow to query standard SAML attributes and set permission sets.
+B. Use the Apex Just-in-Time handler to query standard SAML attributes and set permission sets.
+C. Use a login flow to query custom SAML attributes and set permission sets. °»© Use the Apex Just-in-Time handler to query custom SAML attributes and set permission sets. ES ES ED EI --- PÁGINA 12 --- by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 21
+[Texto incompleto por OCR]
+A. company's external application Is protected by Salesforce through OAuth. The Identity architect for the project needs to limit the level of access to the data of the protected resource in a flexible way. What should be done to improve security?
+D. O Leverage external objects and data cassifiation polices O Mark this tem for later review.
+Respuesta detectada: No detectada
+
+Pregunta 22
+[Texto incompleto por OCR]
+A. Enable Justin-Time User Provisioning in the SAML Single Sign-On Setting, configure the User Provisioning Type, and provide the SAML JIT Handler. 8.Q Create @ new permission set with JIT provisioning enabled, configure the necessary permissions, and assign the permission set to relevant users. €.Q Mocity the organization-wide sharing settings to allow JIT prowsioning, update the sharing rues for the user ject. 0.© Create a new Apex dass to handle JIT provisioning, implement the required methods, and assign the dass to the appropriate user profiles. © Mark this tem for later review.
+Respuesta detectada: A
+
+Pregunta 23
+Universal Containers uses Salesforce as an identity provider and Concur as the Employee Expense management system. The HR director wants to ensure Concur accounts for employees are created only after the appropriate approval in the Salesforce org. Which three steps should the identity architect use to implement this requirement?
+A. Create an approval process for User object associated with the provisioning flow. 8. Create an approval process for a custom object associated with the provisioning flow. Create an approval process for UserProvisioningRequest object associated with the provisioning flow.
+D. Enable User Provisioning for the connected app.
+E. Create a connected app for Concur in Salesforce. | next> Preview Alf submit ear asotns sae "Da auae Time Remai jing: 01:11:45
+Respuesta detectada: D, E
+
+Pregunta 24
+[Texto incompleto por OCR]
+A. Q Use tne Login History object to track information about devices from which users fg in. 8. Use the Activations feature to meet the compliance requirement to track device information. €.Q Use Login Flows to capture device from which users log in and store device and user information in a custom objec. 1.© Use multifactor authentication (MFA) to meet the compliance requirement to track device information. O Mark this tem for later review. 25 of 64, Northern Trail Outfitters (NTO) leverages Microsoft Active Directory (AD) for management of employee usernames, passwords, permissions, and asset access. NTO also owns a third- party single sign-on (SSO) solution. The third-party party SSO solution is used for all corporate applications, including Salesforce. NNTO has asked an architect to explore Salesforce Identity Connect for automatic provisioning and deprovisioning of users in Salesforce. What role does identity Connect play in the outlined requirements?
+Respuesta detectada: A
+
+Pregunta 25
+Universal Containers (UC) is rolling out its new Customer Identity and Access Management Solution built on top of its existing Salesforce instance. UC wants to allow customers to login using Facebook, Google, and other social sign-on providers. How should this functionality be enabled for UC, assuming all social
+A. ee) Configure a single sign-on setting and a JIT handler for each social sign-on provider. ®© Configure an authentication provider and a registration handler for each social sign-on provider. c. ) Configure an authentication provider and a Just-In-Time (JIT) handler for each social sign-on provider.
+D. oO Configure a single sign-on setting and a4 registration handler for each social sign-on provider. Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 26
+Northern Trail Outfitters would like to use a portal built on Salesforce Experience Cloud for customer self-service. Guests of the portal should be able to self-register, but be unable to automatically be assigned to a contact record until verified. External Identity licenses have been purchased for the project. After registered guests complete an onboarding process, a flow will create the appropriate account and contact records for the user. Which three steps should an identity architect follow to implement the outlined requirements? AG) Customize the self-registration Apex handler to create only the user record. 8. 'Select the "Configurable Self-Reg Page" option under Login & Registration.
+C. D Set up an external login page and call Salesforce APIs for user creation.
+D. Enable "Allow customers and partners to self-register". & a) 'Customize the self-registration Apex handler to temporarily associate the user to a shared single contact record. --- PÁGINA 15 --- by ORAKE INTERNATIONAL
+Respuesta detectada: D
+
+Pregunta 27
+An identity architect's client has a homegrown identity provider (IdP). Salesforce is used as the service provider (SP). The head of IT is worried that during a SP initiated single sign-on (SSO), the Security Assertion Markup Language (SAML) request content will be altered. What should the identity architect recommend to make sure that there is additional trust between the SP and the IdP? Ay Encrypt the SAML Request using certification OAuthority (CA) signed certificate and decrypt on IdP.
+B. 3) Ensure that there is an HTTPS connection between IDP and SP. c. oO Ensure that on the SSO settings page, the "Request Signing Certificate" fleld has a self-signed certificate.
+D. Ensure that the Issuer and Assertion Consumer Service (ACS) URL is properly configured between SP and IDP. eee Eee eee
+Respuesta detectada: No detectada
+
+Pregunta 28
+Northern Trail Outfitters (NTO) leverages Microsoft Active Directory (AD) for management of employee usernames, passwords, permissions, and asset access. NTO also owns a third-party single sign-on (SSO) solution. The third-party party SSO solution is used for all corporate applications, including Salesforce. NTO has asked an architect to explore Salesforce Identity Connect for automatic provisioning and deprovisioning of users in Salesforce. What role does identity Connect play in the outlined requirements?
+A. a) Set up = 'nal login page and call Salesforce APIs for user creationze the: Customi self-registration Apex handler to create only the user record. allow c Enable " th ustomers and partners to self-register". e the: Customi to a sself-registration Apex handler to temporarily associate the userje "Copared single contact record. Select thion, 'figurable Self-Reg Page" option under Login & Registra Salesforce Certified Identity and Access Management Archite
+B. User Management
+E. Single Sign-On a @) Identity Provider --- PÁGINA 35 --- Trail Ou like to use 29 of G4. Northern jejp-septfitters would= the portal 2 portal built on Salesforce Experience Cloud for customer Sjly be vice. Guests OLontact rec Should be able to self-register, but be unable to automaticayurchasassigned to 4 tect, ord until verified. External Identity licenses have been ¢ ed for the project. sts com After registered gue: -ecorq/plete an onboarding process, a flow will create the appropriate account and contact 5 for the user. yould a Which three steps st 1 Identity architect follow to implement the outlined requirements?
+Respuesta detectada: No detectada
+
+Pregunta 29
+Universal Containers is implementing a new Experience Cloud site and the identity architect wants to use dynamic branding features as part of the login process.
+A. To use dynamic branding, the community must be built with the Visualforce + Salesforce Tabs template. }To use dynamic branding, the community must be built with the Customer Account Portal template.
+C. An external content management system (CMS) must be used for dynamic branding on Experience Cloud sites.
+D. An experience ID (expid) or placeholder parameter must be used in the URL to represent the brand. (Ss) (ESS) ESS EEE by ORAKE INTERNATIONAL
+Respuesta detectada: D
+
+Pregunta 30
+Northern Trail Outfitters (NTO) uses the Customer 360 Platform implemented on Salesforce Experience Cloud. The development team in charge has learned of a contactless user feature, which can reduce the overhead of managing customers and partners by creating users without contact information. What is the potential impact to the architecture if NTO decides to implement this feature? --- PÁGINA 9 ---
+A. Custom registration handler is needed to correctly assign External Identity or Community license for the newly registered contactless user. 8. © I contactless user is upgraded to Community license, the contact record is automatically created and linked to the user record, but not associated with an Account. Contactless user feature is available only with the External Identity license, which can restrict the Experience Cloud functionality available to the user. @oF 64. universal Containers is creating a mobile application that will be secured by Salesforce Identity using the OAuth 2.0 user-agent flow. Application users will authenticate using username and password. They should not be forced to approve API access in the mobile app or reauthenticate for 3 months. Which two connected app options need to be configured to fulfill this use case?
+B. Set the Session Timeout value to 3 months. "@ 'Set the Refresh Token Policy to expire refresh token after 3 months.
+D. Set Permitted Users to "All users may self-authorize",
+Respuesta detectada: D
+
+Pregunta 31
+Northern Trail Outfitters (NTO) uses a Security Assertion Markup Language (SAML)-based Identity Provider (IdP) to OAuthenticate employees to all systems. The IdP OAuthenticates users against a Lightweight Directory Access Protocol (LDAP) directory and has access to user information. NTO wants to minimize Salesforce license usage since only a small percentage of users need Salesforce. What is recommended to ensure new employees have immediate access to Salesforce using their current IdP?
+A. Build an integration that queries LDAP periodically and creates new active users in Salesforce. Configure Just-in-Time provisioning using SAML attributes to create new Salesforce users as necessary when a new user attempts to login to Salesforce.
+C. Define a process where administrators manually create new users in Salesforce.
+D. C Build an integration that queries LOAP and creates new inactive users in Salesforce and use a login flow to activate the user at first login. Fos J next> Brose af sunt xo y ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 32
+Universal Containers Is creating a mobile application that will be secured by Salesforce Identity using the OAuth 2.0 user-agent flow (this low uses the OAuth 2.0 impli grant type) Which three OAuth concepts apply to this low?
+A. C) Verification Code
+B. cero ©. Scopes
+D. Refresh Token
+E. Authorization Code 'Transiation Value: You must select exactly responses. (Mark this tem for later review. Ss a oo --- PÁGINA 12 ---
+Respuesta detectada: B, D
+
+Pregunta 33
+[Texto incompleto por OCR]
+A. leading fitness tracker company Is getting ready to launch a customer community. The company wants its customers to login to the community and connect their fitness device to their profile, Customers should be able to obtain exercise details and fitness recommendation in the community. Which should be used to satisfy this requirement? AQ Login Fine 8.O OAuth Asset Token flow €.@ auth Device Fiow 0.O Named Credentials O Mark this tem for later review. 34 of 64, An identity architect is setting up an integration between Salesforce and a third-party system. The third-party system needs to be able to authenticate to Salesforce and then make API calls against the REST API. (One of the requirements is that the solution needs to ensure the third party service providers connected app in Salesforce minimizes the need for end user interaction and maximizes security. Which OAuth flow should be used to fulfill the requirement?
+Respuesta detectada: No detectada
+
+Pregunta 34
+Universal Containers (UC) has decided to replace the homegrown customer portal with Salesforce Experience Cloud. UC will continue to use its third-party single sign-on (SSO) solution that stores all of its customer and partner credentials. The first time a customer logs in to the Experience Cloud site through SSO, a user record needs to be created automatically. Which solution should an identity architect recommend in order to automatically provision users in Salesforce upon login?
+A. P Custom login flow and Apex handler
+B. Custom middleware and web services c© Just-in-Time (JIT) provisioning
+D. oO Third-party AppExchange solution --- PÁGINA 3 --- Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 35
+Universal Containers (UC) is considering a Customer 360 initiative to gain a single source of the truth for its customer data across disparate systems and services. UC wants to understand the primary benefits of Customer 360 Identity and how it contributes to a successful Customer 360 Truth project. What are two are key benefits of Customer 360 Identity as it relates to Customer 360?
+A. Customer 360 Identity automatically integrates with Customer 360 Data Manager and Customer 360 Audiences to seamlessly populate all user data. experiences.
+C. Customer 360 Identity enables an organization to build a single login for each of its customers, giving the organization an understanding of the user's login activity across all its digital properties and applications.
+D. Customer 360 Identity not only provides a unified sign up and sign in experience, but also tracks anonymous user activity prior to signing up so organizations can understand user activity before and after the users identify themselves. Time Remai jing: 01:11:17
+Respuesta detectada: C
+
+Pregunta 36
+{36 of 64. Universal Containers Is creating a web application that wil be secured by Salesforce Identity using the OAuth 2.0 Web Server Flow (this flow uses the OAuth 2.0 OAuthorization code grant type). Which three OAuth concepts aocly to this ow? Choos. .
+A. Q OAuth 2.0 User-Agent Flow 8.Q OAuth 2.0 Asset Token Flow CQ oauth 2.0.30 Bearer Flow 10. OAuth 2.0 Device Flow © Mark this tem for later review.
+B. D Verfcation URL G.( Authentication Token
+D. Clent Secret
+E. Access Token OD Mark this tem for later review. ss Or) 37 of 64, A manufacturer wants to provide registration for an Internet of Things (IoT) device with limited display input or capabilities. Which Salesforce OAuth authorization flow should be used?
+Respuesta detectada: A, D, E
+
+Pregunta 37
+An identity professional is working on the configuration of a connected app for Universal Container's (UC) partner portal. UC wants to allow external users to access certain Salesforce data and perform limited actions. However, they also want to enforce additional security measures, such as IP restrictions and session timeout settings. Which configuration option should be used to enforce IP restrictions and session timeout settings for the connected app? Session Settings £.O Login IP Ranges €.Q Custom Permissions
+D. Connected App OAuth policies Fos J next> Brose af sunt xo by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 38
+[Texto incompleto por OCR]
+A. consumer products company uses Salesforce to maintain consumer information, including orders. The company implemented a portal solution using Salesforce Experience Cloud for its consumers where the consumers can log in using their credentials. The company is considering allowing users to login with their Facebook or LinkedIn credentials. Once enabled, what role will Salesforce play?
+D. oO Salesforce will be the identity provider (IdP).
+Respuesta detectada: No detectada
+
+Pregunta 39
+[Texto incompleto por OCR]
+A. Deploy Identity Connect component and set up automated provisioning and deprovisioning of users, as well as SAML-based SSO. 8. © Configure Salesforce as a SAML service provider, and enable Just-in Time (J1T) provisioning and deprovisioning of users. Configure Salesforce as a SAML Service Provider, and enable SCIM (System for Cross-Domain Identity Management) for provisioning and deprovisioning of users.
+B. JWT Bearer Token Flow €.© User Agent Flow °»© Web Server Flow Wot 64. A olobal company's Salesforce Identity Architect is reviewing its Salesforce production org login history and is seeing some intermittent Security Assertion Markup Language (SAML SSO) "Replay Detected" and "Assertion Invalid" login errors. Which two issues would cause these errors?
+C. Update the Security Assertion Markup Language Just-in-Time (SAML JIT) handler in Salesforce for user provisioning and de-provisioning. »©® Configure User Provisioning for Connected Apps. (GB of 64. Universal Containers want users to be able to log in to the Salesforce mobile app with their Active Directory password. Employees are unable to use mobile VPN. Which two options should an identity architect recommend to meet the requirement? @ Active Directory Password Sync Plugin salesforce Identity Connect €. Configure Cloud Provider Load Balancer oO Salesforce Trigger & Field on Contact Object 'of 64. Universal Containers uses Salesforce as an identity provider and Concur as the Employee Expense management system. The HR director wants to ensure Concur accounts for employees are created only after the appropriate approval in the Salesforce org. Which three steps should the identity architect use to implement this requirement?
+D. C} The certificate loaded into SSO configuration does not match the certificate used by the IdP. Se of 64. Northern Trail Outfitters (NTO) leverages Microsoft Active Directory (AD) for management of employee usernames, passwords, permissions, and asset access. NTO also owns a third-party single sign-on (SSO) solution. The third-party party SSO solution is used for all corporate applications, including Salesforce. NTO has asked an architect to explore Salesforce Identity Connect for automatic provisioning and deprovisioning of users in Salesforce. What role does identity Connect play in the outlined requirements? --- PÁGINA 13 --- User Management 8.© Identity Provider ©. Service Provider 0.E Single Sign-on Time Rem q@ of 64. Northern Trail Outfitters (NTO) uses a Security Assertion Markup Language (SAML)-based Identity Provider (IdP) to authenticate employees to all systems. The IdP authenticates users against a Lightweight Directory Access Protocol (LDAP) directory and has access to user information. NTO wants to minimize Salesforce license usage since only a small percentage of users need Salesforce. What is recommended to ensure new employees have immediate access to Salesforce using their current IdP?
+E. Create an approval process for a custom object associated with the provisioning flow. Create a connected app for Concur in Salesforce. --- PÁGINA 15 --- ® of 64. An identity professional, responsible for ensuring secure access to the Salesforce platform, needs to audit and verify user activity during and after login. They want to monitor login attempts, track user authentication methods, and identify suspicious behavior or unauthorized access. Which tool or feature should they leverage to achieve this objective?
+Respuesta detectada: B, C, D, E
+
+Pregunta 40
+[Texto incompleto por OCR]
+A. security architect is rolling out a new multi-factor authentication (MFA) mandate, where all employees must go through a secure authentication process before accessing Salesforce. There are multiple Identity Providers (IdP) in place and the architect is considering how the "Authentication Method Reference" field (AMR) in the Login History can help. Which two considerations should the architect keep in mind? Implementation at IdP. Both OIDC and Security Assertion Markup Language (SAML) are c. AMR field shows the authentication methods used at IdP. Db. oO High-assurance sessions must be configured under Session Security Level Policies. --- PÁGINA 7 ---
+Respuesta detectada: No detectada
+
+Pregunta 41
+Northern Trail Outfitters (NT' sportswear brand on its existing consur) js launching a new Experience Cloud. As part of the launclner portal built on Salesforce will be sent to existing customers to log, emails with promotional links marketing manager would like the port, jn and claim a discount. The users will be directed to the brand link a] dynamically branded so that users will view a recognizable NTO-bratthey clicked on; otherwise, aided page. The campaign is launching quickly, so t additional licenses. However, the develthere is no time to procure any apply any required changes to the port;pment team is available to al. Which approach should the identity arc . hitect recommend?
+A. oO Use Heroku to build the new brand site and embedded login to reuse identities.
+B. Implement Experience ID in the code and extend the URLs and endpoints, as required. (oot oO Configure an additional community site on the same org that Is dedicated for the new brand.
+D. e) Create a full sandbox to replicate the portal site and update the branding accordingly. Salesforce Certified Identity and Access Management Archit
+Respuesta detectada: No detectada
+
+Pregunta 42
+Which two things should be done to ensure end users can only use single sign-on (SSO) to login in to Salesforce? Enable My Domain and select "Prevent login from https://login.salesforce.com".
+C. Once $50 is enabled, users are only able to login using Salesforce credentials.
+D. Assign user "Is Single Sign-On Enabled" permission via profile or permission set. ES ES ED EI --- PÁGINA 23 --- by ORAKE INTERNATIONAL
+Respuesta detectada: D
+
+Pregunta 43
+[Texto incompleto por OCR]
+A. Salesforce Administrator is tasked with setting up Just-in- Time (JIT) provisioning for SAML to enable Single Sign-On (SSO) for your organization. They have already configured the SAML settings for SSO in Salesforce. What should be their next steps to enable JIT provisioning?
+B. cc Create a new permission set with JIT provisioning enabled, configure the necessary permissions, and assign the permission set to relevant users. c. oO Modify the organization-wide sharing settings to allow JIT provisioning, update the sharing rules for the user object. °© Enable Just-in-Time User Provisioning in the SAML Single Sign-On Setting, configure the User Provisioning Type, and provide the SAML JIT Handler.
+Respuesta detectada: No detectada
+
+Pregunta 44
+Northern Trail Outfitters (NTO) is planning to build a new customer service portal and wants to use passwordless login, allowing customers to login with a one-time passcode sent to them via email or SMS. How should the quantity of required Identity Verification Credits be estimated?
+A. oO Identity Verification Credits are consumed with each verification sent and should be estimated based on the number of logins that will incur a verification challenge.
+B. Cy Each community comes with 10,000 Identity Verification Credits per month and only customers with more than 10,000 logins a month should estimate additional SMS verifications needed. c© Identity Verification Credits are consumed with each SMS (text message) sent and should be estimated based on the number of login verification challenges for SMS verification users.
+D. oO Identity Verification Credits are a direct add-on license based on the number of existing member-based or login-based Community licenses. --- PÁGINA 9 --- Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 45
+Universal! Containers uses Salesforce as an identity provider and Concur as the Employee Expense management system. The HR director wants to ensure Concur accounts for employees are created only after the appropriate approval in the Salesforce org. Which three steps should the identity architect use to implement this requirement?
+A. oO Create an approval process for User object associated with the provisioning flow. Create an approval process for UserProvisioningRequest object associated with the provisioning flow. pas | Create an approval process for a custom object associated with the provisioning flow. °@ Enable User Provisioning for the connected app.
+E. Create a connected app for Concur in Salesforce. Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 46
+[Texto incompleto por OCR]
+A. Salesforce customer is implementing Sales Cloud and a custom pricing application for its call center agents. An Enterprise single sign-on solution is used to authenticate and sign-in users to all applications. The customer has the following requirements: 1. The development team has decided to use a Canvas app to expose the pricing application to agents. 2. Agents should be able to access the Canvas app without needing to log in to the pricing application. @ Configure the Canvas app as a connected app and set Admin-approved users as pre-authorized. 8. Enable OAuth settings in the connected app with required OAuth scopes for the pricing application.
+C. Select "Enable as a Canvas Personal App" in the connected app settings.
+D. Enable SAML in the connected app and Security Assertion Markup Language (SAML) Initiation Method as Service Provider Initiated. --- PÁGINA 25 --- by ORAKE INTERNATIONAL 1g: 01:10:47
+Respuesta detectada: D
+
+Pregunta 47
+Experience Authorization Request Cloud Site Northern Trail Outfitters (NTO) is using Experience Cloud as an Identity Provider for its application on Heroku. The application on Heroku should be able to handle two brands, Northern Trail Shoes and Northern Trail Shirts.
+A. user should select either of the two brands in Heroku before logging into the community. The app then performs Authorization using OAuth2.0 with the Salesforce Experience Cloud site. NTO wants to make sure it renders login page images dynamically based on the user's brand preference selected in Heroku before Authorization. What should an identity architect do to fulfill the above requirements?
+D. Authorize third-party service by sending authorization requests to the community-url/services/oauth2/authorize/cookie_value. DS EES SD --- PÁGINA 26 --- by ORAKE INTERNATIONAL
+Respuesta detectada: No detectada
+
+Pregunta 48
+Universal Containers (UC) wants to provide single sign-on (SSO) for a business-to-consumer (B2C) application using Salesforce Identity. Which Salesforce license should UC utilize to implement this use case?
+A. Q Identity verication Creaits are consumed with each SMS (text message) sent and shouldbe estimated based on the number of login verification challenges for SMS verfication users. 8. Idennty vericaion Credts are a direct ada-on lcense based onthe number of existing member-based or login-based Communty licenses. €.© Identity vectiation Credits are consumed with each verfiation sent and shouldbe estimated based on the number af logins that wil incur a verfication challenge. 1.© Each community comes with 10,000 Identity Verification Credits per month and eny customers with mare than 10,000 logins a month should estimate aditional SMS verfications needed. © Mark this tem for later review. oe oo ooo
+Respuesta detectada: No detectada
+
+Pregunta 49
+The CMO of an advertising company has invited an Identity and Access Management (IAM) specialist to discuss Salesforce out-of-box capabilities for configuring the company's login and registration experience on Salesforce Experience Cloud. The CMO is looking to brand the login page with the company's logo, background color, login button color, and dynamic right-frame from an external URL. Which two solutions should the IAM specialist recommend? Login & Registration pages can be branded In the Community Administration settings.
+B. 1 GB | Build custom pages for branding requirements in Experience Cloud. Cc. Use Experience Builder to bulld branded Reset and Forgot Password pages. 2 Build custom site pages for reset and forgot password features.
+Respuesta detectada: No detectada
+
+Pregunta 50
+[Texto incompleto por OCR]
+A. global company's Salesforce Identity Architect is reviewing its Salesforce production org login history and is seeing some intermittent Security Assertion Markup Language (SAML SSO) "Replay Detected" and "Assertion Invalid" login errors. Which two issues would cause these errors? @ The assertion sent to Salesforce contains an assertion ID previously used. 8, () The current time setting of the company's identity provider (IdP) and Salesforce platform is out of sync by more than eight minutes.
+C. D The certificate loaded into SSO configuration does not match the certificate used by the IdP.
+D. The subject element is missing from the assertion sent to Salesforce. (Ss) (ESS) ESS EEE y ORAKE INTERNATIONAL
+Respuesta detectada: D
+
+Pregunta 51
+Northern Trail Outfitters (NTO) uses the Customer 360 Platform implemented on Salesforce Experience Cloud. The development team in charge has learned of a contactless user feature, which can reduce the overhead of managing customers and partners by creating users without contact information. What is the potential impact to the architecture if NTO decides to implement this feature?
+A. oO Custom registration handler is needed to correctly assign External Identity or Community license for the newly registered contactless user.
+B. oO If contactiess user is upgraded to Community license, the contact record is automatically created and linked to the user record, but not associated with an Account. c© Contactless user feature is available only with the External Identity license, which can restrict the Experience Cloud functionality available to the user. receiving one-time password (OTP) needs to match the number on the contact record. Salesforce Certified Identity and Access Management Archit«
+Respuesta detectada: No detectada
+
+Pregunta 52
+[Texto incompleto por OCR]
+A. web service is developed that allows secure access to customer order status on the Salesforce Platform. The service connects to Salesforce through a connected app with the web server flow. The following are the required actions for the authorization flow: 1. User Authenticates and Authorizes Access 2. Request an Access Token 3. Salesforce Grants an Access Token 4, Request an Authorization Code 5. Salesforce Grants Authorization Code What is the correct sequence for the authorization flow?
+Respuesta detectada: No detectada
+
+Pregunta 53
+'53 of 64. Universal Containers uses Salesforce as an identity provider and Concur as the Employee Expense management system. The HR director wants to ensure Concur accounts for employees are created only after the appropriate approval in the Salesforce org, men hee steps shuld heey whee =o mement rs eaarement? 'AG@ robe User Provstonin fo the comers app. 8.) Create an approval process fora custom objet asocoted wth the provsoring flow, ©) create an approval proces for User object associated wth the provisoing fw. ©. €@ Create an approval process for UserProvsoningResuest object assacied withthe provstoin on
+A. Q Use Heroku to build the new brand site and embedded login to reuse identities 8.Q Configure an additional community ste on the same org that is dedicate for the new brand. €.© Create a fll sandbox to replicate the portal site and update the branding accordingly. 10. Implement Experience 1D In the code and extend the URL and endpoints, as required. O Mark ths tem for iter review.
+E. Ciestea connected 69 for Concarin Salesforce. © Mark this tem for later review. Ss ss Or) --- PÁGINA 19 --- 54 of 64, Northern Trail Outfitters (NTO) is launching a new sportswear brand on its existing consumer portal bullt on Salesforce Experience Cloud. As part of the launch, emails with promotional links will be sent to existing customers to log in and claim a discount. The marketing manager would like the portal dynamically branded so that users will be directed to the brand link they clicked on; otherwise, users will view @ recognizable NTO-branded pa: The campaign is launching quickly, so there is no time to procure any additional licenses. However, the development team is available to apply any required changes to the portal. Which approach should the identity architect recommend?
+Respuesta detectada: E
+
+Pregunta 54
+[Texto incompleto por OCR]
+A. global company's Salesforce Identity Architect is reviewing its Salesforce production org login history and Is seeing some intermittent Security Assertion Markup Language (SAML SSO) "Replay Detected" and "Assertion Invalid" login errors. Which two Issues would cause these errors? The subject element Is missing from the assertion sent to Salesforce. The assertion sent to Salesforce contains an assertion ID previously used, The current time setting of the company's Identity provider (IdP) and Salesforce platform is out of sync by more than eight minutes. The certificate loaded into SSO configuration does not match the certificate used by the IdP. --- PÁGINA 14 --- Salesforce Certified Identity and Access Management Archit«
+Respuesta detectada: No detectada
+
+Pregunta 55
+'55 of 64. A secunty architects roling out @ new muiti-factor OAuthentication (MFA) mandate, where all employees must go through a secure OAuthentication process before accessing Salesforce. There are mutiple Identity Providers (IGP) in place and the architect 's considering how the "Authentication Method Reference" field (AMR) in the Login History can help. Which two considerations should the architect keep In mind?
+A. C) Hioh-assurance sessions must be configured under Session Security Level Policies. 1. AMR feld shows the authentication methods used at 14P. © Mark this tem for later review. (ed [EES] Ee] Bee]
+Respuesta detectada: No detectada
+
+Pregunta 56
+'56 of 64. The CMO of an advertising company has invited an Identity and Access Management (IAM) specialist to discuss Salesforce outof-box capabilities for configuring the company's login and registration experience on Salesforce Experience Cloud. 'The CMO is looking to brand the login page with the company's logo, background color, login button color, and dynamic right-frame from an external URL. \Which two solutions should the IAM specialist recommend? AG) Use Exrerience Builder to build branded Reset and Forgot Password pages. '8. () Build custom site pages for reset and forgot password features.
+A. uid an megravon rat ques LDAP perioicaly and creates new cove users in Salesforce. 2.© Define & process where administrators manually create new users in Salesforce. €.© Buia an integration that queries LOAP and creates new inactive users n Salesforce and use a login flow to actvate the user at fst loin 1.@ Configure Just-in-Time provsioning using SAML attributes to create new Salesforce Users as necessary when a new user attempts to login to Salesforce. © Mark this tem for tater review.
+C. Loain & Registration pages can be branded in the Community Administration settings, 1D. Build custom pages for branding requirements in Experience Cloud, © Mark this tem for later review. --- PÁGINA 20 --- 57 of 64, Northern Trail Outfitters (NTO) uses a Security Assertion Markup Language (SAML)-based Identity Provider (IdP) to authenticate employees to all systems. The IdP authenticates users against a Lightweight Directory Access Protocol (LDAP) directory and has access to user information. NTO wants to minimize Salesforce license usage since only a small percentage of users need Salesforce. What is recommended to ensure new employees have immediate access to Salesforce using their current 1dP?
+Respuesta detectada: C
+
+Pregunta 57
+An identity architect's client has a homegrown identity provider (IdP). Salesforce is used as the service provider (SP). The head of IT is worried that during a SP initiated single sign-on (SSO), the Security Assertion Markup Language (SAML) request content will be altered. What should the identity architect recommend to make sure that there is additional trust between the SP and the IdP?
+A. Encrypt the SAML Request using certification authority (CA) signed certificate and decrypt on IdP. 8. © Ensure that the Issuer and Assertion Consumer Service (ACS) URL is properly configured between SP and IDP.
+C. Ensure that on the SSO settings page, the "Request Signing Certificate" field has a self-signed certificate.
+D. Ensure that there is an HTTPS connection between DP and SP. Fox J next> Brose lf suse xo Press the "Prnt Sern" on vour kevboard to takéa --- PÁGINA 31 ---
+Respuesta detectada: No detectada
+
+Pregunta 58
+Northern Trail Outfitters manages application functional permissions centrally as Active Directory groups. The CRM_SuperUse and CRM _ Reporting SuperUser groups should respectively give the user the SuperUser and Reporting_SuperUser permission set in Salesforce. Salesforce is the service provider to a Security Assertion Markup Language (SAML) identity provider. How should an identity architect ensure the Active Directory groups are reflected correctly when a user accesses Salesforce?
+A. Oo Use the Apex Just-in-Time handler to query standard SAML attributes and set permission sets. 5© Use the Apex Just-in-Time handler to query custom SAML attributes and set permission sets. Cc. oO Use a login flow to query custom SAML attributes and set permission sets.
+D. oO Use a login flow to query standard SAML attributes and set permission sets. --- PÁGINA 16 --- Salesforce Certified Identity and Access Management Archite
+Respuesta detectada: No detectada
+
+Pregunta 59
+--- PÁGINA 21 ---
+A. B 'An organization has a central cloud-based Identity and Access Management (IAM) Service for authentication and user management, which must be utilized by all applications as follows: 1 - Change of a user status in the central IAM Service triggers provisioning or deprovisioning in the integrated cloud applications. 2 - Security Assertion Markup Language single sign-on (SSO) Is used to facilitate access for users authenticated at identity provider (Central IAM Service). Which approach should an IAM architect implement on Salesforce Sales Cloud to meet the requirements? AQ Configure centrar 1am service as an authentication provider and extend registration handler to manage provisioning and deprovisioning of users. 8.@ Configure Salesforce as a SAML Service Provider, and enable SCIM (System for Cross-Domain Identity Management) for provisioning and deprovisioning of users. €.Q Configure Salesforce as a SAML service provider, and enable Justin Time QT) provisioning and deprowsioning of users. 0.O Deploy Identity Connect component and set up automated provisioning and deprovisioning of users, as well as SAML-based SSO. ©) Mork this item for later review.
+Respuesta detectada: No detectada
+
+Pregunta 60
+(60 of 64. Universal Containers (UC) currently uses Salesforce Sales Cloud and an external bling application. Both Salesforce and the billing application are accessed several times a day to manage customers. UC would like to configure single sign-on and leverage Salesforce as the identity provider. ditionally, UC would like the biling application to be accessible from Salesforce. A redirect is acceptable. Which twa Salnetoren rants chavid an dante architect recommend to satisty the requirements?
+A. C Hentity connect
+B. C Connected Apps €{@)*PP Launcher
+D. Salesforce canvas © Mark this tem for later review.
+Respuesta detectada: D
+
+Pregunta 61
+[Texto incompleto por OCR]
+A. company's external application is protected by Salesforce through OAuth. The identity architect for the project needs to limit the level of access to the data of the protected resource in a flexible way. What should be done to improve security?
+B. Create custom scopes and assign to the connected app.
+C. Select "Admin approved users are pre-authorized" and assign specific profiles.
+D. Define a permission set that grants access to the app and assign to authorized users. Fox J next> Brose lf suse xo --- PÁGINA 33 --- lesforce Certified Identity and Access Management Architect
+Respuesta detectada: No detectada
+
+Pregunta 62
+[Texto incompleto por OCR]
+A. Salesforce Administrator is tasked with setting up Just-in-Time (JIT) provisioning for SAML to enable Single Sign-On (SSO) for your organization. They have already configured the SAML settings for SSO in Salesforce. What should be their next steps to enable JIT provisioning?
+B. Create a new permission set with JIT provisioning enabled, configure the necessary permissions, and assign the permission set to relevant users.
+C. E© Create a new Apex class to handle JIT provisioning, implement the required methods, and assign the class to the appropriate user profiles.
+D. Modify the organization-wide sharing settings to allow JIT provisioning, update the sharing rules for the user object. Ss ES ST) y ORAKE INTERNATIONAL
+Respuesta detectada: A
+
+Pregunta 63
+<< Ga = Users
+A. multinational company is looking to rollout Salesforce globally. The company has a Microsoft Active Directory Federation Services (ADFS) implementation for the Americas, Europe and APAC. The company plans to have a single org and they would like to have all of its users access Salesforce using the ADFS . The company would like to limit its investments and prefer not to procure additional applications to satisfy the requirements. What is recommended to ensure these requirements are met 7 AQ Add a central identity system that teverates oeween the ADFS systems and integrate with Salesforce for single sign-on. 8.Q Use connected apps for each ADFS implementation and implement Salesforce site to authenticate users across the ADFS system applicable to thelr geo. €.© Configure Each ADFS system under single sign-on settings and alow users to choose the system to authenticate during sign onto Salesforce. 10.@ Implement identity Connect to provide single sign-on to Salesforce and federated across multiple ADFS systems. Mark this iter for later review. is) --- PÁGINA 23 --- 64 of 64, Northern Trail Outfitters (NTO) uses the Customer 360 Platform implemented on Salesforce Experience Cloud. The development team in charge has learned of a contactless user feature, which can reduce the overhead of managing customers and partners by creating users without contact information. What Is the potential impact to the architecture if NTO decides to implement this feature?
+Respuesta detectada: No detectada
+
+Pregunta 64
+ADFS Americas
+A. multinational comnanvy is lookina to rollaut Salesforce alobally. The --- PÁGINA 19 --- ccess Salesforce using the ADFS . The company would like to limit its vestments and prefer not to procure additional applications to atisfy the requirements. (hat is recommended to ensure these requirements are met ?
+B. oO Use connected apps for each ADFS implementation and implement Salesforce site to authenticate users across the ADFS system applicable to their geo. c. oO Configure Each ADFS system under single sign-on settings and allow users to
+D. oO Add a central Identity system that federates between the ADFS systems and integrate with Salesforce for single sign-on. and end the assessment. Number of Items 64 Answered: Number of Items o Unanswered: Number of Items ° Marked for Review: Answers 1.p 2.AD 3.CA 4.D 5. DA 6. AC 7.4 8.B 9A 10. Dc 11..B 12.A 13. BA 14. CA 15.D 16.c 17.6 18. ECA 19. ABD 20. BD 21.D 22.A 23.A 24.A 25.B 26.5 2Z7.A 28.8 29. CEB 30.A 31. EBD 32.cD 33.B 34.cC 35, ¢ 36.B 37.CA 33.8 39.8 40. BC 41.6 42.D 43.D 44.¢ 45. EBD 46.A a7.c 48. BD 49.CA 50. A sSi.c 52. BEA 53.¢ 54. BA 55.D 56.D 57.D 58.8 59.c 60. C 61. BC 62.B 63.A 64.A --- PÁGINA 20 --- Percentag Identity Management Concepts 7O% Accepting 3rd Party Identity in Salesforce 76% Salesforce as an Identity Provider 80% Access Management Best Practices 88% Salesforce Identity 100% Community (Partner and Customer) 72% worldwide community of Certified Professionals! Exit T :
+Respuesta detectada: No detectada

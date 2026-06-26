@@ -1,0 +1,21 @@
+unique_id,answer,choose_expected,matched_qnum,similarity
+1,C,1,27,1.000
+2,D,1,1,1.000
+3,A,1,9,1.000
+4,To Validate,1,,0.298
+5,C,1,,0.373
+6,AB,2,,0.179
+7,BC,2,40,0.952
+8,To Validate,1,,0.224
+9,A,1,33,0.939
+10,AC,2,37,1.000
+11,AD,2,6,1.000
+12,To Validate,1,,0.279
+13,B,1,24,1.000
+14,C,1,17,1.000
+15,B,1,58,1.000
+16,To Validate,1,,0.311
+17,A,1,23,0.998
+18,To Validate,1,,0.305
+19,To Validate,1,,0.344
+20,C,1,16,0.919

@@ -1,0 +1,5 @@
+Resumen segunda pasada
+Preguntas procesadas: 64
+Sin respuesta detectada: 7
+Confianza baja (<0.50): 17
+Nota: resultado basado en evidencia OCR; validar manualmente preguntas de baja confianza

@@ -1,0 +1,4 @@
+Guide generation stats
+Unique questions in source: 132
+Mapped to validated answer bank: 62
+Pending manual validation: 70

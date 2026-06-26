@@ -1,0 +1,4 @@
+Resumen de deduplicacion de preguntas
+Bloques extraidos de los 4 ficheros: 181
+Preguntas unicas finales: 144
+Preguntas duplicadas eliminadas: 37

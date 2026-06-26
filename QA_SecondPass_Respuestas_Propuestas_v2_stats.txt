@@ -1,0 +1,6 @@
+Resumen segunda pasada v2
+Preguntas procesadas: 64
+Sin respuesta detectada: 4
+Confianza baja (<0.50): 5
+Inconsistencias choose N: 0
+Se forzo cardinalidad de respuesta para respetar choose N cuando hubo evidencia suficiente

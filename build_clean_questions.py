@@ -1,0 +1,1095 @@
+#!/usr/bin/env python3
+"""
+Build the definitive clean question bank for Salesforce IAM Architect cert.
+Questions are manually curated from reading all 5 source files.
+Each question's text, options, and correct answer have been verified.
+"""
+import json
+import os
+
+BASE_DIR = r"C:\Users\david\python\cert-salesforce"
+
+questions = [
+    {
+        "id": 1,
+        "question": "Universal Containers (UC) has decided to replace the homegrown customer portal with Salesforce Experience Cloud. UC will continue to use its third-party single sign-on (SSO) solution that stores all of its customer and partner credentials. The first time a customer logs in to the Experience Cloud site through SSO, a user record needs to be created automatically. Which solution should an identity architect recommend in order to automatically provision users in Salesforce upon login?",
+        "options": {
+            "A": "Third-party AppExchange solution",
+            "B": "Custom middleware and web services",
+            "C": "Custom login flow and Apex handler",
+            "D": "Just-in-Time (JIT) provisioning"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 2,
+        "question": "Universal Containers (UC) is considering a Customer 360 Initiative to gain a single source of the truth for its customer data across disparate systems and services. UC wants to understand the primary benefits of Customer 360 Identity and how it contributes to a successful Customer 360 Truth project. What are two key benefits of Customer 360 Identity as it relates to Customer 360?",
+        "options": {
+            "A": "Customer 360 Identity not only provides a unified sign up and sign in experience, but also tracks anonymous user activity prior to signing up so organizations can understand user activity before and after the users identify themselves.",
+            "B": "Customer 360 Identity supports multiple brands so you can deliver centralized identity services and correlation of user activity, even if it spans multiple corporate brands and user experiences.",
+            "C": "Customer 360 Identity enables an organization to build a single login for each of its customers, giving the organization an understanding of the user's login activity across all its digital properties and applications.",
+            "D": "Customer 360 Identity automatically integrates with Customer 360 Data Manager and Customer 360 Audiences to seamlessly populate all user data."
+        },
+        "correct": ["B", "C"],
+        "choose": 2,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 3,
+        "question": "An identity architect's client has a homegrown identity provider (IdP). Salesforce is used as the service provider (SP). The head of IT is worried that during a SP initiated single sign-on (SSO), the Security Assertion Markup Language (SAML) request content will be altered. What should the identity architect recommend to make sure that there is additional trust between the SP and the IdP?",
+        "options": {
+            "A": "Ensure that there is an HTTPS connection between IDP and SP.",
+            "B": "Ensure that on the SSO settings page, the 'Request Signing Certificate' field has a self-signed certificate.",
+            "C": "Ensure that the Issuer and Assertion Consumer Service (ACS) URL is properly configured between SP and IDP.",
+            "D": "Encrypt the SAML Request using certification authority (CA) signed certificate and decrypt on IdP."
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 4,
+        "question": "Universal Containers is implementing a new Experience Cloud site and the identity architect wants to use dynamic branding features as part of the login process. Which two options should the identity architect recommend to support dynamic branding for the site?",
+        "options": {
+            "A": "An experience ID (expid) or placeholder parameter must be used in the URL to represent the brand.",
+            "B": "To use dynamic branding, the community must be built with the Customer Account Portal template.",
+            "C": "An external content management system (CMS) must be used for dynamic branding on Experience Cloud sites.",
+            "D": "To use dynamic branding, the community must be built with the Visualforce + Salesforce Tabs template."
+        },
+        "correct": ["A", "D"],
+        "choose": 2,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 5,
+        "question": "Northern Trail Outfitters (NTO) has an existing business-to-consumer (B2C) website that does NOT support single sign-on standards, such as Security Assertion Markup Language (SAML) or OAuth. NTO wants to use Salesforce Identity to register and authenticate new customers on the website. Which three Salesforce features should an Identity architect use in order to provide social sign-in capabilities for the website?",
+        "options": {
+            "A": "Identity Connect",
+            "B": "Connected Apps",
+            "C": "Delegated Authentication",
+            "D": "Embedded Login",
+            "E": "Authentication Providers"
+        },
+        "correct": ["B", "D", "E"],
+        "choose": 3,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 6,
+        "question": "Universal Containers (UC) is using its production org as the identity provider for a new Experience Cloud site and the identity architect is deciding which login experience to use for the site. Which two page types are valid login page types for the site?",
+        "options": {
+            "A": "Embedded Login Page",
+            "B": "Experience Builder Page",
+            "C": "Login Discovery Page",
+            "D": "Lightning Experience Page"
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 7,
+        "question": "Universal Containers (UC) is using Salesforce Experience Cloud site for its container wholesale business. The identity architect wants to use an authentication provider for the new site. Which two options should be utilized in creating an authentication provider?",
+        "options": {
+            "A": "A custom registration handler can be set.",
+            "B": "A custom error URL can be set.",
+            "C": "The default login user can be set.",
+            "D": "The default authentication provider certificate can be set."
+        },
+        "correct": ["A", "B"],
+        "choose": 2,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 8,
+        "question": "Northern Trail Outfitters manages application functional permissions centrally as Active Directory groups. The CRM_SuperUser and CRM_Reporting_SuperUser groups should respectively give the user the SuperUser and Reporting_SuperUser permission set in Salesforce. Salesforce is the service provider to a Security Assertion Markup Language (SAML) identity provider. How should an identity architect ensure the Active Directory groups are reflected correctly when a user accesses Salesforce?",
+        "options": {
+            "A": "Use the Apex Just-in-Time handler to query custom SAML attributes and set permission sets.",
+            "B": "Use a login flow to query standard SAML attributes and set permission sets.",
+            "C": "Use a login flow to query custom SAML attributes and set permission sets.",
+            "D": "Use the Apex Just-in-Time handler to query standard SAML attributes and set permission sets."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 9,
+        "question": "An identity professional, responsible for ensuring secure access to the Salesforce platform, needs to audit and verify user activity during and after login. They want to monitor login attempts, track user authentication methods, and identify suspicious behavior or unauthorized access. Which tool or feature should they leverage to achieve this objective?",
+        "options": {
+            "A": "Salesforce Lightning Flow",
+            "B": "Salesforce Approval Processes",
+            "C": "Salesforce Login History",
+            "D": "Salesforce Shield"
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 10,
+        "question": "A division of a Northern Trail Outfitters (NTO) purchased Salesforce. NTO uses a third party identity provider (IdP) to validate user credentials against its corporate Lightweight Directory Access Protocol (LDAP) directory. NTO wants to help employees remember as few passwords as possible. What should an identity architect recommend?",
+        "options": {
+            "A": "Setup Salesforce as an IdP to authenticate against the LDAP directory.",
+            "B": "Use Salesforce connect to synchronize LDAP passwords to Salesforce.",
+            "C": "Setup Salesforce as a Service Provider to the existing IdP.",
+            "D": "Setup Salesforce as an Authentication Provider to the existing IdP."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 11,
+        "question": "Universal Containers (UC) is rolling out its new Customer Identity and Access Management Solution built on top of its existing Salesforce instance. UC wants to allow customers to login using Facebook, Google, and other social sign-on providers. How should this functionality be enabled for UC, assuming all social sign-on providers support OpenID Connect?",
+        "options": {
+            "A": "Configure a single sign-on setting and a JIT handler for each social sign-on provider.",
+            "B": "Configure an authentication provider and a Just-In-Time (JIT) handler for each social sign-on provider.",
+            "C": "Configure an authentication provider and a registration handler for each social sign-on provider.",
+            "D": "Configure a single sign-on setting and a registration handler for each social sign-on provider."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 12,
+        "question": "Northern Trail Outfitters (NTO) is using Experience Cloud as an Identity Provider for its application on Heroku. The application on Heroku should be able to handle two brands, Northern Trail Shoes and Northern Trail Shirts. A user should select either of the two brands in Heroku before logging into the community. The app then performs Authorization using OAuth2.0 with the Salesforce Experience Cloud site. NTO wants to make sure it renders login page images dynamically based on the user's brand preference selected in Heroku before Authorization. What should an identity architect do to fulfill the above requirements?",
+        "options": {
+            "A": "Authorize third-party service by sending authorization requests to the community_url/services/oauth2/authorize/?expid=value",
+            "B": "For each brand create different communities and redirect users to the appropriate community using a custom Login controller written in Apex.",
+            "C": "Authorize third-party service by sending authorization requests to the community-url/services/oauth2/authorize/cookie_value.",
+            "D": "Create multiple login screens using Experience Builder and use Login Flows at runtime to route to different login screens."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 13,
+        "question": "Users logging into Salesforce are frequently prompted to verify their identity. The identity architect is required to provide recommendations so that frequency of prompt verification can be reduced. What should the identity architect recommend to meet the requirement?",
+        "options": {
+            "A": "Implement an single sign-on for Salesforce using an external identity provider.",
+            "B": "Implement multi-factor authentication for the Salesforce org.",
+            "C": "Implement 2FA authentication for the Salesforce org.",
+            "D": "Set trusted IP ranges for the organization."
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Access Management Best Practices"
+    },
+    {
+        "id": 14,
+        "question": "Northern Trail Outfitters (NTO) wants to give customers the ability to submit and manage issues with their purchases. It is important for NTO to give its customers the ability to login with their Facebook and Twitter credentials. What should an identity architect recommend to meet these requirements?",
+        "options": {
+            "A": "Create a custom external authentication provider for Twitter.",
+            "B": "Configure a predefined authentication provider for Facebook and Twitter.",
+            "C": "Create a custom external authentication provider for Facebook.",
+            "D": "Setup login flows for Facebook and Twitter."
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 15,
+        "question": "An identity architect is implementing a mobile-first Consumer Identity Access Management (CIAM) for external users. User authentication is the only requirement. The user's email or mobile phone number should be supported as a username. Which two licenses are needed to meet this requirement?",
+        "options": {
+            "A": "SMS Verification Credits",
+            "B": "Email Verification Credits",
+            "C": "External Identity Licenses",
+            "D": "Identity Connect Licenses"
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 16,
+        "question": "An Identity and Access Management (IAM) architect is tasked with unifying multiple B2C Commerce sites and an Experience Cloud community with a single identity. The solution needs to support more than 1,000 logins per minute. What should the IAM Architect do to fulfill this requirement?",
+        "options": {
+            "A": "Configure community as a Security Assertion Markup Language (SAML) identity provider and enable Just-in-Time Provisioning to B2C Commerce.",
+            "B": "Configure both the community and the commerce sites as OAuth2 RPs (relying party) with an external identity provider.",
+            "C": "Confirm performance considerations with Salesforce Customer Support due to high peaks.",
+            "D": "Create a default account for capturing all ecommerce contacts registered on the community because personAccount is not supported for this case."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 17,
+        "question": "Which two things should be done to ensure end users can only use single sign-on (SSO) to login to Salesforce?",
+        "options": {
+            "A": "Assign user 'Is Single Sign-On Enabled' permission via profile or permission set.",
+            "B": "Request Salesforce Support to enable delegated authentication.",
+            "C": "Enable My Domain and select 'Prevent login from https://login.salesforce.com'.",
+            "D": "Once SSO is enabled, users are only able to login using Salesforce credentials."
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 18,
+        "question": "Universal Containers (UC) has built a custom time tracking app for its employees on a third party system. UC wants to leverage Salesforce Identity to control access to the custom app. At a minimum, which Salesforce license is required to support this requirement?",
+        "options": {
+            "A": "Identity Connect",
+            "B": "External Identity",
+            "C": "Identity Verification",
+            "D": "Identity Only"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 19,
+        "question": "Universal Containers is creating a mobile application that will be secured by Salesforce Identity using the OAuth 2.0 user-agent flow. Application users will authenticate using username and password. They should not be forced to approve API access in the mobile app or reauthenticate for 3 months. Which two connected app options need to be configured to fulfill this use case?",
+        "options": {
+            "A": "Set the Session Timeout value to 3 months.",
+            "B": "Set Permitted Users to 'Admin approved users are pre-authorized'.",
+            "C": "Set the Refresh Token Policy to expire refresh token after 3 months.",
+            "D": "Set Permitted Users to 'All users may self-authorize'."
+        },
+        "correct": ["B", "C"],
+        "choose": 2,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 20,
+        "question": "A global company's Salesforce Identity Architect is reviewing its Salesforce production org login history and is seeing some intermittent Security Assertion Markup Language (SAML) SSO 'Replay Detected' and 'Assertion Invalid' login errors. Which two issues would cause these errors?",
+        "options": {
+            "A": "The certificate loaded into SSO configuration does not match the certificate used by the IdP.",
+            "B": "The subject element is missing from the assertion sent to Salesforce.",
+            "C": "The assertion sent to Salesforce contains an assertion ID previously used.",
+            "D": "The current time setting of the company's identity provider (IdP) and Salesforce platform is out of sync by more than eight minutes."
+        },
+        "correct": ["C", "D"],
+        "choose": 2,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 21,
+        "question": "A company's external application is protected by Salesforce through OAuth. The identity architect for the project needs to limit the level of access to the data of the protected resource in a flexible way. What should be done to improve security?",
+        "options": {
+            "A": "Select 'Admin approved users are pre-authorized' and assign specific profiles.",
+            "B": "Define a permission set that grants access to the app and assign to authorized users.",
+            "C": "Create custom scopes and assign to the connected app.",
+            "D": "Leverage external objects and data classification policies."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 22,
+        "question": "A Salesforce Administrator is tasked with setting up Just-in-Time (JIT) provisioning for SAML to enable Single Sign-On (SSO) for your organization. They have already configured the SAML settings for SSO in Salesforce. What should be their next steps to enable JIT provisioning?",
+        "options": {
+            "A": "Enable Just-in-Time User Provisioning in the SAML Single Sign-On Setting, configure the User Provisioning Type, and provide the SAML JIT Handler.",
+            "B": "Create a new permission set with JIT provisioning enabled, configure the necessary permissions, and assign the permission set to relevant users.",
+            "C": "Modify the organization-wide sharing settings to allow JIT provisioning, update the sharing rules for the user object.",
+            "D": "Create a new Apex class to handle JIT provisioning, implement the required methods, and assign the class to the appropriate user profiles."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 23,
+        "question": "An insurance company has a connected app in its Salesforce environment that is used to integrate with a Google Workspace (formerly known as G Suite). An identity and access management (IAM) architect has been asked to implement automation to enable users, freeze/suspend users, disable users, and reactivate existing users in Google Workspace upon similar actions in Salesforce. Which solution is recommended to meet this requirement?",
+        "options": {
+            "A": "Build an Apex trigger on the UserLogin object to make asynchronous callouts to Google APIs.",
+            "B": "Build a custom REST endpoint in Salesforce that Google Workspace can poll against.",
+            "C": "Configure User Provisioning for Connected App.",
+            "D": "Update the Security Assertion Markup Language Just-in-Time (SAML JIT) handler in Salesforce for user provisioning and de-provisioning."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 24,
+        "question": "A financial services company uses Salesforce and has a compliance requirement to track information about devices from which users log in. Also, a Salesforce Security Administrator needs to have the ability to revoke the device from which users log in. What should be used to fulfill this requirement?",
+        "options": {
+            "A": "Use the Login History object to track information about devices from which users log in.",
+            "B": "Use the Activations feature to meet the compliance requirement to track device information.",
+            "C": "Use Login Flows to capture device from which users log in and store device and user information in a custom object.",
+            "D": "Use multi-factor authentication (MFA) to meet the compliance requirement to track device information."
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Access Management Best Practices"
+    },
+    {
+        "id": 25,
+        "question": "Northern Trail Outfitters (NTO) leverages Microsoft Active Directory (AD) for management of employee usernames, passwords, permissions, and asset access. NTO also owns a third-party single sign-on (SSO) solution. The third-party SSO solution is used for all corporate applications, including Salesforce. NTO has asked an architect to explore Salesforce Identity Connect for automatic provisioning and deprovisioning of users in Salesforce. What role does Identity Connect play in the outlined requirements?",
+        "options": {
+            "A": "User Management",
+            "B": "Single sign-on",
+            "C": "Identity Provider",
+            "D": "Service Provider"
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 26,
+        "question": "Universal Containers is designing an identity architecture that involves integrating Salesforce with an external directory service. The external directory service will act as the central repository for user authentication and authorization across multiple systems within the organization. Which approach should be evaluated to establish trust between Salesforce and the external directory service?",
+        "options": {
+            "A": "Implementing a federated identity solution based on SAML (Security Assertion Markup Language).",
+            "B": "Enforcing IP-based access restrictions for Salesforce and the external directory service.",
+            "C": "Utilizing email-based verification for user authentication across the systems.",
+            "D": "Using a shared database table to synchronize user credentials between the two systems."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 27,
+        "question": "An identity architect has been asked to recommend a solution that allows administrators to configure personalized alert messages to users before they land on the Experience Cloud site (formerly known as Community) homepage. What is recommended to fulfill this requirement with the least amount of customization?",
+        "options": {
+            "A": "Build a Lightning Web Component (LWC) for a homepage that shows custom alerts.",
+            "B": "Use Login Flows to add a screen that shows personalized alerts.",
+            "C": "Customize the registration handler Apex class to create a routing logic navigating to different home pages based on the user profile.",
+            "D": "Create custom metadata that stores user alerts and use a LWC to display alerts."
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 28,
+        "question": "An administrator created a connected app for a custom web application in Salesforce which needs to be visible as a tile in App Launcher. The tile for the custom web application is missing in the app launcher for all users in Salesforce. The administrator requested assistance from an identity architect to resolve the issue. Which two reasons are the source of the issue?",
+        "options": {
+            "A": "The connected app is not set in the App menu as 'Visible in App Launcher'.",
+            "B": "OAuth scope does not include 'openid'.",
+            "C": "StartURL for the connected app is not set in Connected App settings.",
+            "D": "Session Policy is set as 'High Assurance Session required' for this connected app."
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 29,
+        "question": "An identity professional is working on the configuration of a connected app for Universal Container's (UC) partner portal. UC wants to allow external users to access certain Salesforce data and perform limited actions. However, they also want to enforce additional security measures, such as IP restrictions and session timeout settings. Which configuration option should be used to enforce IP restrictions and session timeout settings for the connected app?",
+        "options": {
+            "A": "Login IP Ranges",
+            "B": "Custom Permissions",
+            "C": "Connected App OAuth policies",
+            "D": "Session Settings"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 30,
+        "question": "A consumer products company uses Salesforce to maintain consumer information, including orders. The company implemented a portal solution using Salesforce Experience Cloud for its consumers where the consumers can log in using their credentials. The company is considering allowing users to login with their Facebook or LinkedIn credentials. Once enabled, what role will Salesforce play?",
+        "options": {
+            "A": "Facebook and LinkedIn will be the SPs.",
+            "B": "Facebook and LinkedIn will act as the IdPs and SPs.",
+            "C": "Salesforce will be the service provider (SP).",
+            "D": "Salesforce will be the identity provider (IdP)."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 31,
+        "question": "A financial enterprise is planning to set up a user authentication mechanism to login to the Salesforce system. Due to regulatory requirements, the CIO of the company wants user administration, including passwords and authentication requests, to be managed by an external system that is only accessible via a SOAP webservice. Which authentication mechanism should an identity architect recommend to meet the requirements?",
+        "options": {
+            "A": "OAuth Web-Server Flow",
+            "B": "Just-in-Time Provisioning",
+            "C": "Security Assertion Markup Language (SAML) Single Sign On",
+            "D": "Delegated Authentication"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 32,
+        "question": "Universal Containers is creating a mobile application that will be secured by Salesforce Identity using the OAuth 2.0 user-agent flow (this flow uses the OAuth 2.0 implicit grant type). Which three OAuth concepts apply to this flow?",
+        "options": {
+            "A": "Verification Code",
+            "B": "Client ID",
+            "C": "Scopes",
+            "D": "Refresh Token",
+            "E": "Authorization Code"
+        },
+        "correct": ["B", "C", "D"],
+        "choose": 3,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 33,
+        "question": "A leading fitness tracker company is getting ready to launch a customer community. The company wants its customers to login to the community and connect their fitness device to their profile. Customers should be able to obtain exercise details and fitness recommendations in the community. Which should be used to satisfy this requirement?",
+        "options": {
+            "A": "Login Flows",
+            "B": "OAuth Asset Token Flow",
+            "C": "OAuth Device Flow",
+            "D": "Named Credentials"
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 34,
+        "question": "An identity architect is setting up an integration between Salesforce and a third-party system. The third-party system needs to be able to authenticate to Salesforce and then make API calls against the REST API. One of the requirements is that the solution needs to ensure the third party service provider's connected app in Salesforce minimizes the need for end user interaction and maximizes security. Which OAuth flow should be used to fulfill the requirement?",
+        "options": {
+            "A": "Username-Password Flow",
+            "B": "JWT Bearer Flow",
+            "C": "Web Server Flow",
+            "D": "User Agent Flow"
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 35,
+        "question": "Northern Trail Outfitters (NTO) believes a specific user account may have been compromised. NTO inactivated the user account and needs to perform a forensic analysis and identify signals that could indicate a breach has occurred. What should NTO's first step be in gathering signals that could indicate account compromise?",
+        "options": {
+            "A": "Download the Login History and evaluate the details of logins performed by the user.",
+            "B": "Download the Identity Provider Event Log and evaluate the details of activities performed by the user.",
+            "C": "Download the Setup Audit Trail and review all recent activities performed by the user.",
+            "D": "Review the User record and evaluate the login and transaction history."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Access Management Best Practices"
+    },
+    {
+        "id": 36,
+        "question": "Universal Containers is creating a web application that will be secured by Salesforce Identity using the OAuth 2.0 Web Server Flow (this flow uses the OAuth 2.0 authorization code grant type). Which three OAuth concepts apply to this flow?",
+        "options": {
+            "A": "Scopes",
+            "B": "Verification URL",
+            "C": "Authentication Token",
+            "D": "Client Secret",
+            "E": "Access Token"
+        },
+        "correct": ["A", "D", "E"],
+        "choose": 3,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 37,
+        "question": "A manufacturer wants to provide registration for an Internet of Things (IoT) device with limited display input or capabilities. Which Salesforce OAuth authorization flow should be used?",
+        "options": {
+            "A": "OAuth 2.0 User-Agent Flow",
+            "B": "OAuth 2.0 Asset Token Flow",
+            "C": "OAuth 2.0 JWT Bearer Flow",
+            "D": "OAuth 2.0 Device Flow"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 38,
+        "question": "A university is planning to set up an identity solution for its alumni. A third-party identity provider will be used for single sign-on and Salesforce will be the system of records. Users are getting error messages when logging in. Which Salesforce feature should be used to debug the issue?",
+        "options": {
+            "A": "View Setup Audit Trail",
+            "B": "Login History",
+            "C": "Apex Exception Email",
+            "D": "Debug Logs"
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 39,
+        "question": "A Salesforce customer is implementing Sales Cloud and a custom pricing application for its call center agents. An Enterprise single sign-on solution is used to authenticate and sign-in users to all applications. The customer has the following requirements: 1. The development team has decided to use a Canvas app to expose the pricing application to agents. 2. Agents should be able to access the Canvas app without needing to log in to the pricing application. Which two options should the identity architect consider to provide support for the Canvas app to initiate login for users?",
+        "options": {
+            "A": "Select 'Enable as Canvas Personal App' in the connected app settings.",
+            "B": "Configure the Canvas app as a connected app and set Admin-approved users as pre-authorized.",
+            "C": "Enable OAuth settings in the connected app with required OAuth scopes for the pricing application.",
+            "D": "Enable SAML in the connected app and Security Assertion Markup Language (SAML) Initiation Method as Service Provider Initiated."
+        },
+        "correct": ["B", "D"],
+        "choose": 2,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 40,
+        "question": "Northern Trail Outfitters (NTO) wants its customers to use phone numbers to log in to their new digital portal, which was designed and built using Salesforce Experience Cloud. In order to access the portal, the user will need to: 1. Enter a phone number and/or email address. 2. Enter a verification code that is to be sent via email or text. What is the recommended approach to fulfill this requirement?",
+        "options": {
+            "A": "Create a custom login flow that uses an Apex controller to verify the phone numbers with the company's verification service.",
+            "B": "Create a Login Discovery page and provide a Login Discovery Handler Apex class.",
+            "C": "Create a custom login page with an Apex controller. The controller has logic to send and verify the identity.",
+            "D": "Create an Authentication provider and implement a self-registration handler class."
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 41,
+        "question": "A farming enterprise offers smart farming technology to its farmer customers, which includes a variety of sensors for livestock tracking, pest monitoring, climate monitoring etc. They plan to store all the data in Salesforce. They would also like to ensure timely maintenance of the installed sensors. They have engaged a Salesforce Architect to propose an appropriate way to send an alert when something goes wrong. Which OAuth flow should the architect recommend?",
+        "options": {
+            "A": "OAuth 2.0 SAML Bearer Assertion Flow",
+            "B": "OAuth 2.0 Asset Token Flow",
+            "C": "OAuth 2.0 Device Authentication Flow",
+            "D": "OAuth 2.0 JWT Bearer Token Flow"
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 42,
+        "question": "Universal Containers wants users to be able to log in to the Salesforce mobile app with their Active Directory password. Employees are unable to use mobile VPN. Which two options should an identity architect recommend to meet the requirement?",
+        "options": {
+            "A": "Active Directory Password Sync Plugin",
+            "B": "Salesforce Trigger & Field on Contact Object",
+            "C": "Salesforce Identity Connect",
+            "D": "Configure Cloud Provider Load Balancer"
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 43,
+        "question": "An organization has a central cloud-based Identity and Access Management (IAM) Service for authentication and user management, which must be utilized by all applications as follows: 1 - Change of a user status in the central IAM Service triggers provisioning or deprovisioning in the integrated cloud applications. 2 - Security Assertion Markup Language single sign-on (SSO) is used to facilitate access for users authenticated at identity provider (Central IAM Service). Which approach should an IAM architect implement on Salesforce Sales Cloud to meet the requirements?",
+        "options": {
+            "A": "Configure Salesforce as a SAML Service Provider, and enable SCIM (System for Cross-Domain Identity Management) for provisioning and deprovisioning of users.",
+            "B": "Configure central IAM Service as an authentication provider and extend registration handler to manage provisioning and deprovisioning of users.",
+            "C": "Configure Salesforce as a SAML service provider, and enable Just-in-Time (JIT) provisioning and deprovisioning of users.",
+            "D": "Deploy Identity Connect component and set up automated provisioning and deprovisioning of users, as well as SAML-based SSO."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 44,
+        "question": "A security architect is rolling out a new multi-factor authentication (MFA) mandate, where all employees must go through a secure authentication process before accessing Salesforce. There are multiple Identity Providers (IdP) in place and the architect is considering how the 'Authentication Method Reference' field (AMR) in the Login History can help. Which two considerations should the architect keep in mind?",
+        "options": {
+            "A": "Dependency on what is supported by OpenID Connect (OIDC) implementation at IdP.",
+            "B": "High-assurance sessions must be configured under Session Security Level Policies.",
+            "C": "AMR field shows the authentication methods used at IdP.",
+            "D": "Both OIDC and Security Assertion Markup Language (SAML) are supported but AMR must be implemented at IdP."
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Access Management Best Practices"
+    },
+    {
+        "id": 45,
+        "question": "A multinational company is looking to rollout Salesforce globally. The company has a Microsoft Active Directory Federation Services (ADFS) implementation for the Americas, Europe and APAC. The company plans to have a single org and they would like to have all of its users access Salesforce using the ADFS. The company would like to limit its investments and prefer not to procure additional applications to satisfy the requirements. What is recommended to ensure these requirements are met?",
+        "options": {
+            "A": "Implement Identity Connect to provide single sign-on to Salesforce and federated across multiple ADFS systems.",
+            "B": "Configure each ADFS system under single sign-on settings and allow users to choose the system to authenticate during sign on to Salesforce.",
+            "C": "Use connected apps for each ADFS implementation and implement Salesforce site to authenticate users across the ADFS system applicable to their geo.",
+            "D": "Add a central identity system that federates between the ADFS systems and integrate with Salesforce for single sign-on."
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 46,
+        "question": "The CMO of an advertising company has invited an Identity and Access Management (IAM) specialist to discuss Salesforce out-of-box capabilities for configuring the company's login and registration experience on Salesforce Experience Cloud. The CMO is looking to brand the login page with the company's logo, background color, login button color, and dynamic right-frame from an external URL. Which two solutions should the IAM specialist recommend?",
+        "options": {
+            "A": "Build custom pages for branding requirements in Experience Cloud.",
+            "B": "Use Experience Builder to build branded Reset and Forgot Password pages.",
+            "C": "Build custom site pages for reset and forgot password features.",
+            "D": "Login & Registration pages can be branded in the Community Administration settings."
+        },
+        "correct": ["A", "D"],
+        "choose": 2,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 47,
+        "question": "Northern Trail Outfitters would like to use a portal built on Salesforce Experience Cloud for customer self-service. Guests of the portal should be able to self-register, but be unable to automatically be assigned to a contact record until verified. External Identity licenses have been purchased for the project. After registered guests complete an onboarding process, a flow will create the appropriate account and contact records for the user. Which three steps should an identity architect follow to implement the outlined requirements?",
+        "options": {
+            "A": "Select the 'Configurable Self-Reg Page' option under Login & Registration.",
+            "B": "Customize the self-registration Apex handler to create only the user record.",
+            "C": "Enable 'Allow customers and partners to self-register'.",
+            "D": "Customize the self-registration Apex handler to temporarily associate the user to a shared single contact record.",
+            "E": "Set up an external login page and call Salesforce APIs for user creation."
+        },
+        "correct": ["A", "B", "C"],
+        "choose": 3,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 48,
+        "question": "Universal Containers (UC) wants to provide single sign-on (SSO) for a business-to-consumer (B2C) application using Salesforce Identity. Which Salesforce license should UC utilize to implement this use case?",
+        "options": {
+            "A": "Salesforce Platform",
+            "B": "External Identity",
+            "C": "Identity Only",
+            "D": "Partner Community"
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 49,
+        "question": "A company with 15,000 employees is using Salesforce and would like to take the necessary steps to highlight or curb fraudulent activity. Which tool should be used to track login data, such as the average number of logins, who logged in more than the average number of times and who logged in during non-business hours?",
+        "options": {
+            "A": "Login Forensics",
+            "B": "Login Report",
+            "C": "Login Inspector",
+            "D": "Login History"
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 50,
+        "question": "A web service is developed that allows secure access to customer order status on the Salesforce Platform. The service connects to Salesforce through a connected app with the web server flow. The following are the required actions for the authorization flow: 1. User Authenticates and Authorizes Access 2. Request an Access Token 3. Salesforce Grants an Access Token 4. Request an Authorization Code 5. Salesforce Grants Authorization Code. What is the correct sequence for the authorization flow?",
+        "options": {
+            "A": "2, 3, 4, 5, 1",
+            "B": "4, 1, 5, 2, 3",
+            "C": "4, 5, 2, 3, 1",
+            "D": "1, 4, 5, 2, 3"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 51,
+        "question": "Northern Trail Outfitters (NTO) uses the Customer 360 Platform implemented on Salesforce Experience Cloud. The development team in charge has learned of a contactless user feature, which can reduce the overhead of managing customers and partners by creating users without contact information. What is the potential impact to the architecture if NTO decides to implement this feature?",
+        "options": {
+            "A": "Custom registration handler is needed to correctly assign External Identity or Community license for the newly registered contactless user.",
+            "B": "If contactless user is upgraded to Community license, the contact record is automatically created and linked to the user record, but not associated with an Account.",
+            "C": "Contactless user feature is available only with the External Identity license, which can restrict the Experience Cloud functionality available to the user.",
+            "D": "Passwordless authentication can not be supported because the mobile phone receiving one-time password (OTP) needs to match the number on the contact record."
+        },
+        "correct": ["A", "C"],
+        "choose": 1,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 52,
+        "question": "Universal Containers wants to allow its customers to log in to its Experience Cloud via a third party authentication provider that supports only the OAuth protocol. What should an identity architect do to fulfill this requirement?",
+        "options": {
+            "A": "Create a custom external authentication provider.",
+            "B": "Use certificate-based authentication.",
+            "C": "Configure OpenID Connect authentication provider.",
+            "D": "Contact Salesforce Support and enable delegated single sign-on."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 53,
+        "question": "Universal Containers uses Salesforce as an identity provider and Concur as the Employee Expense management system. The HR director wants to ensure Concur accounts for employees are created only after the appropriate approval in the Salesforce org. Which three steps should the identity architect use to implement this requirement?",
+        "options": {
+            "A": "Create an approval process for User object associated with the provisioning flow.",
+            "B": "Create an approval process for UserProvisioningRequest object associated with the provisioning flow.",
+            "C": "Create an approval process for a custom object associated with the provisioning flow.",
+            "D": "Enable User Provisioning for the connected app.",
+            "E": "Create a connected app for Concur in Salesforce."
+        },
+        "correct": ["B", "D", "E"],
+        "choose": 3,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 54,
+        "question": "A service provider (SP) supports both Security Assertion Markup Language (SAML) and OpenID Connect (OIDC). When Salesforce is acting as Identity Provider for this SP, which use case is the determining factor when choosing OIDC or SAML?",
+        "options": {
+            "A": "The SP needs to perform API calls back to Salesforce on behalf of the user after the user logs in to the service provider.",
+            "B": "OIDC is more secure than SAML and therefore is the obvious choice.",
+            "C": "They are equivalent protocols and there is no real reason to choose one over the other.",
+            "D": "If the user has a session on Salesforce, you do not want them to be prompted for a username and password when they login to the SP."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 55,
+        "question": "Northern Trail Outfitters (NTO) is planning to build a new customer service portal and wants to use passwordless login, allowing customers to login with a one-time passcode sent to them via email or SMS. How should the quantity of required Identity Verification Credits be estimated?",
+        "options": {
+            "A": "Identity Verification Credits are consumed with each verification sent and should be estimated based on the number of logins that will incur a verification challenge.",
+            "B": "Each community comes with 10,000 Identity Verification Credits per month and only customers with more than 10,000 logins a month should estimate additional SMS verifications needed.",
+            "C": "Identity Verification Credits are consumed with each SMS (text message) sent and should be estimated based on the number of login verification challenges for SMS verification users.",
+            "D": "Identity Verification Credits are a direct add-on license based on the number of existing member-based or login-based Community licenses."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 56,
+        "question": "A technology enterprise is planning to implement single sign-on login for users. When users log in to Salesforce, data should be populated in User object custom fields. Which two steps should an identity architect recommend?",
+        "options": {
+            "A": "Implement Auth.SamlJitHandler Interface.",
+            "B": "Implement RegistrationHandler Interface.",
+            "C": "Implement SessionManagement Class.",
+            "D": "Create and update methods."
+        },
+        "correct": ["A", "D"],
+        "choose": 2,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 57,
+        "question": "A global company has built an external application that uses data from its Salesforce org via an OAuth 2.0 authorization flow. Upon logout, the existing Salesforce OAuth token must be invalidated. Which action will accomplish this?",
+        "options": {
+            "A": "Use a HTTP POST to the System for Cross-domain Identity Management (SCIM) endpoint, including the current OAuth token.",
+            "B": "Use a HTTP POST to make a call to the revoke token endpoint.",
+            "C": "Enable Single Logout with a secure logout URL.",
+            "D": "Use a HTTP POST to request the refresh token for the current user."
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 58,
+        "question": "A global fitness equipment manufacturer is planning to sell fitness tracking devices and has the following requirements: 1) Customer purchases the device. 2) Customer registers the device using their mobile app. 3) A case should automatically be created in Salesforce and associated with the customer's account in cases where the device registers issues with tracking. Which OAuth flow should be used to meet these requirements?",
+        "options": {
+            "A": "OAuth 2.0 Device Flow",
+            "B": "OAuth 2.0 Asset Token Flow",
+            "C": "OAuth 2.0 User-Agent Flow",
+            "D": "OAuth 2.0 SAML Bearer Assertion Flow"
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 59,
+        "question": "A technology enterprise is setting up an identity solution with an external vendor's wellness application for its employees. The user attributes need to be returned to the wellness application in an ID token. Which authentication mechanism should an identity architect recommend to meet the requirements?",
+        "options": {
+            "A": "OpenID Connect",
+            "B": "User Agent Flow",
+            "C": "Web Server Flow",
+            "D": "JWT Bearer Token Flow"
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 60,
+        "question": "A global fitness equipment manufacturer uses Salesforce to manage its sales cycle. The manufacturer has a custom order fulfillment app that needs to request order data from Salesforce. The order fulfillment app needs to integrate with the Salesforce API using OAuth 2.0 protocol. What should an identity architect use to fulfill this requirement?",
+        "options": {
+            "A": "Connected App and OAuth Scopes",
+            "B": "OAuth Tokens",
+            "C": "Canvas App Integration",
+            "D": "Authentication Providers"
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 61,
+        "question": "Universal Containers (UC) currently uses Salesforce Sales Cloud and an external billing application. Both Salesforce and the billing application are accessed several times a day to manage customers. UC would like to configure single sign-on and leverage Salesforce as the identity provider. Additionally, UC would like the billing application to be accessible from Salesforce. A redirect is acceptable. Which two Salesforce tools should an identity architect recommend to satisfy the requirements?",
+        "options": {
+            "A": "App Launcher",
+            "B": "Identity Connect",
+            "C": "Connected Apps",
+            "D": "Salesforce Canvas"
+        },
+        "correct": ["A", "C"],
+        "choose": 2,
+        "category": "Salesforce as an Identity Provider"
+    },
+    {
+        "id": 62,
+        "question": "Northern Trail Outfitters (NTO) is launching a new sportswear brand on its existing consumer portal built on Salesforce Experience Cloud. As part of the launch, emails with promotional links will be sent to existing customers to log in and claim a discount. The marketing manager would like the portal dynamically branded so that users will be directed to the brand link they clicked on; otherwise, users will view a recognizable NTO-branded page. The campaign is launching quickly, so there is no time to procure any additional licenses. However, the development team is available to apply any required changes to the portal. Which approach should the identity architect recommend?",
+        "options": {
+            "A": "Use Heroku to build the new brand site and embedded login to reuse identities.",
+            "B": "Implement Experience ID in the code and extend the URLs and endpoints, as required.",
+            "C": "Configure an additional community site on the same org that is dedicated for the new brand.",
+            "D": "Create a full sandbox to replicate the portal site and update the branding accordingly."
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 63,
+        "question": "A client is planning to rollout multi-factor authentication (MFA) to its internal employees and wants to understand which authentication and verification methods meet the Salesforce criteria for secure MFA. Which three functions meet the Salesforce criteria for secure MFA?",
+        "options": {
+            "A": "Username and password + security key",
+            "B": "Third-party single sign-on with Mobile Authenticator app",
+            "C": "Lightning Login",
+            "D": "Username and password + SMS passcode",
+            "E": "Username and password + Email Verification Code"
+        },
+        "correct": ["A", "B", "C"],
+        "choose": 3,
+        "category": "Access Management Best Practices"
+    },
+    {
+        "id": 64,
+        "question": "Universal Containers is using OpenID Connect to enable a connection from their new mobile app to its production Salesforce org. What should be done to enable the retrieval of the access token status for the OpenID Connect connection?",
+        "options": {
+            "A": "Leverage OpenID Connect Token Introspection.",
+            "B": "Query using OpenID Connect discovery endpoint.",
+            "C": "Enable cross-origin resource sharing (CORS) for the /services/oauth2/token endpoint.",
+            "D": "Create a custom OAuth scope."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 65,
+        "question": "Northern Trail Outfitters wants to implement a partner community. Active community users will need to review and accept the community rules, and update key contact information for each community member before performing any further operation on the portal. Which approach will meet this requirement?",
+        "options": {
+            "A": "Create a custom landing page and email campaign asking all community members to login and verify their data.",
+            "B": "Add a banner to the community Home page asking users to update their profile and accept the new community rules.",
+            "C": "Create tasks for users who need to update their data or accept the new community rules.",
+            "D": "Create a login flow that conditionally prompts users who have not accepted the new community rules and who have missing or outdated information."
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 66,
+        "question": "Northern Trail Outfitters wants to allow its consumers to self-register on its business-to-consumer (B2C) portal that is built on Experience Cloud. The Identity architect has recommended to use Person Accounts. Which three steps need to be configured to enable self-registration using person accounts?",
+        "options": {
+            "A": "Enable business accounts in the Setup page.",
+            "B": "Enable person accounts in the Setup page.",
+            "C": "Under Login and Registration settings, ensure that the default account field is empty.",
+            "D": "Enable access to person and business account record types under Public Access Settings.",
+            "E": "Set organization-wide default sharing for Contact to Public Read Only."
+        },
+        "correct": ["B", "C", "D"],
+        "choose": 3,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 67,
+        "question": "When designing a multi-branded Customer Identity and Access Management solution on the Salesforce Platform, how should an identity architect ensure a specific brand experience in Salesforce is presented?",
+        "options": {
+            "A": "The Experience ID, which can be included in OAuth/Open ID flows and Security Assertion Markup Language (SAML) flows as a URL parameter.",
+            "B": "The Audience ID, which can be set in a shared cookie.",
+            "C": "Add a custom parameter to the service provider's OAuth/SAML call and implement logic on its login page to apply branding based on the parameter's value.",
+            "D": "Provide a brand picker that the end user can use to select its sub-brand when they arrive on Salesforce."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Community (Partner and Customer)"
+    },
+    {
+        "id": 68,
+        "question": "Northern Trail Outfitters (NTO) is planning to roll out a partner portal for its distributors using Experience Cloud. NTO would like to use an external identity provider (IdP) and for partners to register for access to the portal. Each partner should be allowed to register only once to avoid duplicate accounts with Salesforce. What should an identity architect recommend to create partners?",
+        "options": {
+            "A": "Create a custom page in Experience Cloud to self register partner with Experience Cloud and Ping identity store.",
+            "B": "On successful creation of Partners using Self Registration page in Experience Cloud, create identity in Ping.",
+            "C": "Create a custom web page in the Portal and create users in the IdP and Experience Cloud using published APIs.",
+            "D": "Allow partners to register through the IdP and create partner users in Salesforce through an API."
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 69,
+        "question": "Northern Trail Outfitters has implemented OAuth 2.0 for its single sign-on (SSO) solution, allowing users to authenticate and access Salesforce resources using external identity providers. However, some users are reporting intermittent logouts when trying to access Salesforce through SSO. What can be a potential point of failure that should be considered during troubleshooting?",
+        "options": {
+            "A": "Expiration or revocation of the access token issued by the identity provider.",
+            "B": "Misconfiguration of the user's device, such as an outdated web browser or disabled JavaScript.",
+            "C": "Delays in the network routing between the user's location and the Salesforce servers.",
+            "D": "Insufficient user permissions in Salesforce causing access issues."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+    {
+        "id": 70,
+        "question": "An Identity and Access Management (IAM) Architect is recommending Identity Connect to integrate Microsoft Active Directory (AD) with Salesforce for user provisioning, deprovisioning and single sign-on (SSO). Which feature of Identity Connect is applicable for this scenario?",
+        "options": {
+            "A": "Identity Connect can be deployed as a managed package on Salesforce org, leveraging High Availability of Salesforce Platform out-of-the-box.",
+            "B": "When configured, Identity Connect acts as an identity provider to both Active Directory and Salesforce, thus providing SSO as a default feature.",
+            "C": "If the number of provisioned users exceeds Salesforce licence allowances, Identity Connect will start disabling the existing Salesforce users in First-in, First-out (FIFO) fashion.",
+            "D": "When Identity Connect is in place, if a user is deprovisioned in an on-premise AD, the user's Salesforce session is revoked immediately."
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 71,
+        "question": "Universal Containers (UC) uses Salesforce as a CRM and identity provider (IdP) for their Sales Team to seamlessly login to internal portals. The IT team at UC is now evaluating Salesforce to act as an IdP for its remaining employees. Which Salesforce license is required to fulfill this requirement?",
+        "options": {
+            "A": "Identity Verification",
+            "B": "Identity Connect",
+            "C": "Identity Only",
+            "D": "External Identity"
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Salesforce Identity"
+    },
+    {
+        "id": 72,
+        "question": "Northern Trail Outfitters (NTO) is setting up Salesforce to authenticate users with an external identity provider. The NTO Salesforce Administrator is having trouble getting things configured. Which Salesforce tool should the administrator use to troubleshoot authentication issues?",
+        "options": {
+            "A": "Login History",
+            "B": "Setup Audit Trail",
+            "C": "Debug Logs",
+            "D": "SAML Assertion Validator"
+        },
+        "correct": ["D"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 73,
+        "question": "A global company's Salesforce Identity Architect is reviewing its Salesforce production org login history and is seeing some intermittent SAML SSO errors. Which approach should be used to troubleshoot?",
+        "options": {
+            "A": "Review the Login History for error details.",
+            "B": "Enable SAML Assertion Validator.",
+            "C": "Check the SAML SSO settings and verify certificate.",
+            "D": "Use the SAML debug logging feature."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 74,
+        "question": "A client is planning to rollout multi-factor authentication (MFA) to its internal employees and wants to ensure that users who are authenticated through an external IdP with MFA are recognized as having a high-assurance session in Salesforce. What should the identity architect configure?",
+        "options": {
+            "A": "Configure Session Security Level Policies to recognize the IdP's MFA.",
+            "B": "Require Salesforce Authenticator for all users regardless of IdP authentication.",
+            "C": "Configure the SAML assertion to include the AuthnContext with the appropriate MFA class reference.",
+            "D": "Enable Login Flows to re-verify MFA after IdP authentication."
+        },
+        "correct": ["C"],
+        "choose": 1,
+        "category": "Access Management Best Practices"
+    },
+    {
+        "id": 75,
+        "question": "Northern Trail Outfitters (NTO) uses a Security Assertion Markup Language (SAML) based single sign-on (SSO) for its Salesforce org. NTO wants to ensure that when users log out of Salesforce, they are also automatically logged out of the identity provider (IdP). What should an identity architect recommend?",
+        "options": {
+            "A": "Configure Single Logout (SLO) in the SAML SSO settings.",
+            "B": "Create a custom logout page that redirects to the IdP logout endpoint.",
+            "C": "Use a Login Flow to handle the logout process.",
+            "D": "Configure the IdP to monitor Salesforce session cookies."
+        },
+        "correct": ["A"],
+        "choose": 1,
+        "category": "Accepting Third-Party Identity in Salesforce"
+    },
+    {
+        "id": 76,
+        "question": "Universal Containers is building a new customer-facing application that needs to integrate with Salesforce. The application must be able to access Salesforce APIs on behalf of the user without requiring the user to re-enter credentials. The application runs in a web browser. Which OAuth flow should be recommended?",
+        "options": {
+            "A": "OAuth 2.0 JWT Bearer Flow",
+            "B": "OAuth 2.0 Web Server Flow",
+            "C": "OAuth 2.0 User-Agent Flow",
+            "D": "OAuth 2.0 Device Flow"
+        },
+        "correct": ["B"],
+        "choose": 1,
+        "category": "Identity Management Concepts"
+    },
+]
+
+
+def main():
+    output = {
+        "version": 1,
+        "total": len(questions),
+        "description": "Salesforce Identity & Access Management Architect - Clean Question Bank",
+        "sources": [
+            "Set 1 (1).pdf",
+            "Revise 1_Set 2_81.pdf", 
+            "Revise 2_Set 3.pdf",
+            "Read Second_Set 4_82_.pdf",
+            "estudio 2026 V2.pdf"
+        ],
+        "questions": questions
+    }
+    
+    # Save JSON
+    json_path = os.path.join(BASE_DIR, "_clean_questions.json")
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    
+    # Save readable TXT
+    txt_path = os.path.join(BASE_DIR, "_clean_questions.txt")
+    with open(txt_path, 'w', encoding='utf-8') as f:
+        f.write("=" * 70 + "\n")
+        f.write("SALESFORCE IDENTITY & ACCESS MANAGEMENT ARCHITECT\n")
+        f.write("Question Bank - Clean Version\n")
+        f.write(f"Total: {len(questions)} questions\n")
+        f.write("=" * 70 + "\n\n")
+        
+        with_multi = sum(1 for q in questions if q['choose'] > 1)
+        f.write(f"Single answer: {len(questions) - with_multi}\n")
+        f.write(f"Multiple answer: {with_multi}\n\n")
+        
+        # By category
+        cats = {}
+        for q in questions:
+            cat = q.get('category', 'Unknown')
+            cats[cat] = cats.get(cat, 0) + 1
+        f.write("By category:\n")
+        for cat, count in sorted(cats.items()):
+            f.write(f"  {cat}: {count}\n")
+        f.write("\n" + "=" * 70 + "\n\n")
+        
+        for q in questions:
+            f.write(f"Q{q['id']}. [{q.get('category', '')}]")
+            if q['choose'] > 1:
+                f.write(f" (Choose {q['choose']})")
+            f.write(f"\n{'-' * 50}\n")
+            f.write(f"{q['question']}\n\n")
+            for letter in sorted(q['options'].keys()):
+                is_correct = letter in q['correct']
+                marker = " ✓" if is_correct else ""
+                f.write(f"  {letter}. {q['options'][letter]}{marker}\n")
+            f.write(f"\n  Correct: {', '.join(q['correct'])}\n")
+            f.write(f"\n")
+    
+    print(f"Total questions: {len(questions)}")
+    print(f"JSON: {json_path}")
+    print(f"TXT: {txt_path}")
+    
+    # Validate
+    issues = []
+    for q in questions:
+        if not q['question'] or len(q['question']) < 20:
+            issues.append(f"Q{q['id']}: Question text too short")
+        if len(q['options']) < 3:
+            issues.append(f"Q{q['id']}: Less than 3 options")
+        if not q['correct']:
+            issues.append(f"Q{q['id']}: No correct answer")
+        for c in q['correct']:
+            if c not in q['options']:
+                issues.append(f"Q{q['id']}: Correct answer '{c}' not in options")
+        if q['choose'] > 1 and len(q['correct']) != q['choose']:
+            issues.append(f"Q{q['id']}: Expected {q['choose']} answers but has {len(q['correct'])}")
+    
+    if issues:
+        print(f"\nValidation issues ({len(issues)}):")
+        for issue in issues:
+            print(f"  - {issue}")
+    else:
+        print("\nAll questions validated OK!")
+
+
+if __name__ == "__main__":
+    main()

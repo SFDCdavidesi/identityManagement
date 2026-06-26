@@ -1,0 +1,4 @@
+Complete generation stats (updated after pass 3)
+Unique questions total: 132
+Resolved with proposed answer: 88
+Pending To Validate: 44

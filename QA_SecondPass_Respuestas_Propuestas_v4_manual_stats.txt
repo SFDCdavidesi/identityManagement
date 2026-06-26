@@ -1,0 +1,5 @@
+Resumen tercera pasada manual v4
+Ajustes adicionales aplicados: 2
+Sin respuesta detectada: 0
+Confianza baja (<0.50): 0
+Inconsistencias choose N: 0

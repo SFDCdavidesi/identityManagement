@@ -246,7 +246,7 @@ function startQuiz() {
 
 async function init() {
   try {
-    const response = await fetch("./_clean_questions_explained.json");
+    const response = await fetch("./clean-questions-explained.json");
     if (!response.ok) {
       throw new Error(`No se pudo cargar _clean_questions_explained.json (${response.status})`);
     }
