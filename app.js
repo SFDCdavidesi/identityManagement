@@ -248,7 +248,7 @@ async function init() {
   try {
     const response = await fetch("./clean-questions-explained.json");
     if (!response.ok) {
-      throw new Error(`No se pudo cargar _clean_questions_explained.json (${response.status})`);
+      throw new Error(`No se pudo cargar clean-questions-explained.json (${response.status})`);
     }
     const data = await response.json();
 
